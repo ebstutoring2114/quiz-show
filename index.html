@@ -1,0 +1,2393 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>2026 화상튜터링 활동 가이드 확인 퀴즈</title>
+
+<!-- ── SNS 공유 미리보기 ──────────────────────────────────
+     주소가 바뀌면 아래 og:url 과 og:image 의 도메인 부분만 고치세요. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EBS 화상튜터링">
+<meta property="og:title" content="2026 화상튜터링 활동 가이드 확인 퀴즈">
+<meta property="og:description" content="멘토편·멘티편 활동 가이드를 제대로 숙지했는지 확인하는 객관식 퀴즈입니다. 문항과 보기 순서는 응시할 때마다 새로 조합됩니다.">
+<meta property="og:url" content="https://ebstutoring2114.github.io/quiz-show/">
+<meta property="og:image" content="https://ebstutoring2114.github.io/quiz-show/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EBS 화상튜터링 캐릭터들">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2026 화상튜터링 활동 가이드 확인 퀴즈">
+<meta name="twitter:description" content="멘토편·멘티편 활동 가이드 학습 확인 퀴즈">
+<meta name="twitter:image" content="https://ebstutoring2114.github.io/quiz-show/assets/og-image.png">
+<meta name="theme-color" content="#F5811F">
+<link rel="icon" href="assets/%ED%8A%9C%EB%A7%81%EC%9D%B4_%EB%91%90%EC%83%81.png">
+<style>
+  :root {
+    --paper:#FFF8F2; --card:#FFF; --ink:#241F1B; --brown:#4E3A2B; --orange:#F5811F;
+    --orange-soft:#FFE8D4; --muted:#8C8177; --line:#E8DCD1; --ok:#1F7A5A; --ok-soft:#E2F2EB;
+    --no:#C0392B; --no-soft:#FBE7E4;
+    --sans:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","맑은 고딕",system-ui,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,"D2Coding",monospace;
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; padding:0; background:var(--paper); }
+  body { font-family:var(--sans); color:var(--ink); line-height:1.6; padding-bottom:48px; -webkit-font-smoothing:antialiased; }
+  button { font-family:inherit; cursor:pointer; }
+  button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+  .wrap { max-width:820px; margin:0 auto; padding:0 20px; }
+
+  .mast { background:var(--orange); color:#fff; padding:30px 0 26px; margin-bottom:24px; }
+  .mast .eyebrow { font-family:var(--mono); font-size:12px; letter-spacing:.18em; opacity:.9; margin:0 0 10px; }
+  .mast h1 { margin:0; font-size:28px; font-weight:800; letter-spacing:-.02em; line-height:1.25; }
+  .mast p { margin:10px 0 0; font-size:14px; opacity:.95; }
+  .mast .back { background:none; border:0; color:#fff; opacity:.9; font-size:12.5px; text-decoration:underline; text-underline-offset:3px; padding:0; margin-bottom:8px; }
+
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; margin-bottom:16px; }
+  .modal-overlay { position:fixed; inset:0; background:rgba(36,31,27,.5); z-index:1000; display:flex; align-items:flex-start; justify-content:center; padding:24px 16px; overflow:auto; }
+  .modal-box { width:100%; max-width:560px; margin:auto; }
+  .modal-box .card { margin:0; box-shadow:0 24px 64px rgba(0,0,0,.28); max-height:calc(100vh - 48px); overflow:auto; }
+  .card h2 { margin:0 0 4px; font-size:17px; font-weight:800; letter-spacing:-.01em; }
+  .card .sub { margin:0 0 18px; font-size:13.5px; color:var(--muted); }
+  .field { display:block; margin-bottom:16px; }
+  .lab { display:block; font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--brown); margin-bottom:8px; }
+  .lab .tiny { font-family:var(--sans); letter-spacing:0; color:var(--muted); font-size:11.5px; }
+  input[type=text], input[type=password], input[type=number], select, textarea {
+    width:100%; padding:11px 13px; font-size:15px; font-family:inherit;
+    border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--ink);
+  }
+  textarea { resize:vertical; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .checkline { display:flex; align-items:center; gap:8px; font-size:14px; margin-bottom:10px; }
+  .checkline input { width:auto; }
+
+  .primary { width:100%; border:0; border-radius:10px; background:var(--brown); color:#fff; font-size:15.5px; font-weight:700; padding:14px; }
+  .primary:hover { opacity:.9; }
+  .primary:disabled { background:#CFC5BA; cursor:not-allowed; }
+  .ghost { border:1px solid var(--line); background:#fff; color:var(--brown); border-radius:10px; padding:11px 16px; font-size:14px; font-weight:600; }
+  .ghost:disabled { opacity:.4; cursor:not-allowed; }
+  .danger { border:1px solid var(--no); background:#fff; color:var(--no); border-radius:10px; padding:10px 14px; font-size:13.5px; font-weight:600; }
+  .rowbtns { display:flex; gap:8px; flex-wrap:wrap; }
+  .notice { font-size:12.5px; color:var(--muted); background:#FBF3EC; border-radius:10px; padding:12px 14px; margin-top:14px; }
+  .notice.warn { background:var(--no-soft); color:var(--no); }
+
+  .examrow { display:block; width:100%; text-align:left; border:1px solid var(--line); background:#fff; border-radius:12px; padding:15px 16px; margin-bottom:10px; color:var(--ink); }
+  .examrow:hover { border-color:var(--orange); }
+  .examrow .t { font-size:16px; font-weight:700; margin-bottom:4px; }
+  .examrow .m { font-size:12.5px; color:var(--muted); }
+  .examrow-wrap { display:flex; align-items:stretch; gap:8px; margin-bottom:10px; }
+  .examrow-wrap .examrow { margin-bottom:0; flex:1; min-width:0; }
+  .examshare { flex:none; border:1px solid var(--line); background:#fff; color:var(--brown); border-radius:12px; padding:0 16px; font-size:13px; font-weight:600; white-space:nowrap; cursor:pointer; }
+  .examshare:hover { border-color:var(--orange); color:var(--orange); }
+  .chip { display:inline-block; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; padding:3px 8px; border-radius:999px; background:var(--orange-soft); color:var(--brown); margin-left:6px; }
+  .chip.gray { background:#F0E7DE; color:var(--muted); }
+
+  .ledger { position:sticky; top:0; z-index:5; background:var(--paper); padding:12px 0 14px; border-bottom:1px solid var(--line); margin-bottom:22px; }
+  .ledger-top { display:flex; justify-content:space-between; align-items:baseline; font-family:var(--mono); font-size:11.5px; color:var(--brown); letter-spacing:.1em; margin-bottom:10px; }
+  .dots { display:flex; gap:4px; flex-wrap:wrap; }
+  .dot { width:14px; height:14px; border-radius:3px; border:1px solid var(--line); background:#fff; }
+  .dot.done { background:var(--brown); border-color:var(--brown); }
+  .dot.now { border-color:var(--orange); background:var(--orange); }
+
+  .qhead { display:flex; align-items:center; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+  .tag { font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; padding:4px 8px; border-radius:999px; border:1px solid var(--line); color:var(--brown); }
+  .tag.lv { background:var(--orange-soft); border-color:transparent; }
+  .qtext { font-size:19px; font-weight:700; line-height:1.5; letter-spacing:-.01em; margin:0 0 18px; }
+  .opts { display:flex; flex-direction:column; gap:9px; }
+  .opt { display:flex; gap:11px; align-items:flex-start; width:100%; text-align:left; border:1px solid var(--line); background:#fff; border-radius:11px; padding:13px 15px; font-size:15px; line-height:1.5; color:var(--ink); }
+  .opt:hover { border-color:var(--orange); }
+  .opt .num { font-family:var(--mono); font-size:12.5px; color:var(--muted); padding-top:2px; }
+  .opt[aria-pressed="true"] { border-color:var(--orange); background:var(--orange-soft); }
+  /* 즉시 채점: 정답을 보여준 뒤 상태 */
+  .opt.locked { cursor:default; }
+  .opt.locked:hover { border-color:var(--line); }
+  .opt.is-answer, .opt.locked.is-answer:hover { border-color:var(--ok); background:var(--ok-soft); }
+  .opt.is-wrong,  .opt.locked.is-wrong:hover  { border-color:var(--no); background:var(--no-soft); }
+  .opt .omark { margin-left:auto; padding-top:3px; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; white-space:nowrap; }
+  .opt.is-answer .omark { color:var(--ok); }
+  .opt.is-wrong .omark { color:var(--no); }
+  .fb { margin-top:14px; border-radius:11px; padding:13px 15px; font-size:13.5px; line-height:1.6; animation:qin .2s ease-out; }
+  .fb.ok { background:var(--ok-soft); }
+  .fb.no { background:var(--no-soft); }
+  .fb .fbhead { display:flex; align-items:center; gap:8px; font-weight:700; font-size:14px; margin-bottom:6px; }
+  .fb.ok .fbhead { color:var(--ok); }
+  .fb.no .fbhead { color:var(--no); }
+  .fb .fbpage { margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--brown); background:#fff; padding:3px 8px; border-radius:999px; }
+  .fb .fbwhy { color:var(--ink); }
+
+  /* 멘토 유형 선택 */
+  .picks { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+  .picks button { width:auto; border:1px solid var(--line); background:#fff; border-radius:999px; padding:9px 15px; font-size:14px; font-weight:700; color:var(--ink); }
+  .picks button[aria-pressed="true"] { border-color:var(--orange); background:var(--orange-soft); color:var(--brown); }
+
+  .linkbtn { display:inline; width:auto; border:0; background:none; padding:0; margin-left:6px; font-size:13px; font-weight:700; color:var(--orange); text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+  .linkbtn:hover { color:var(--brown); }
+
+  /* 랭킹보드 */
+  .iconbtn { flex:none; width:40px; border:1px solid var(--line); background:#fff; color:var(--brown); border-radius:12px; display:flex; align-items:center; justify-content:center; padding:0; cursor:pointer; }
+  .iconbtn:hover { border-color:var(--orange); color:var(--orange); }
+  .iconbtn svg { width:19px; height:19px; }
+  .cardtop { position:absolute; top:14px; right:14px; height:38px; width:38px; border-radius:10px; z-index:2; box-shadow:0 2px 8px rgba(36,31,27,.10); }
+  .haspin { position:relative; }
+
+  .rankme { display:flex; align-items:center; gap:14px; border-radius:14px; padding:14px 16px; background:var(--orange-soft); margin-bottom:18px; }
+  .rankme .big { font-family:var(--mono); font-size:32px; font-weight:700; line-height:1; color:var(--orange); }
+  .rankme .big small { font-size:14px; color:var(--brown); font-weight:700; }
+  .rankme .meta { font-size:12.5px; color:var(--brown); margin-top:4px; }
+  .rankme .sc { margin-left:auto; text-align:right; font-family:var(--mono); font-size:17px; font-weight:700; color:var(--brown); }
+  .rankme .sc small { display:block; font-family:var(--sans); font-size:11px; font-weight:400; color:var(--muted); margin-top:3px; }
+
+  .podium { display:flex; align-items:flex-end; gap:8px; margin:2px 0 18px; }
+  .podium .p { flex:1; min-width:0; text-align:center; }
+  .podium .medal { width:38px; height:38px; margin:0 auto 8px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:13px; font-weight:700; color:#fff; }
+  .podium .p1 .medal { background:#DFA32B; box-shadow:0 4px 12px rgba(223,163,43,.35); }
+  .podium .p2 .medal { background:#A9AEB5; }
+  .podium .p3 .medal { background:#BE8156; }
+  .podium .pnm { font-size:13px; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .podium .psc { font-family:var(--mono); font-size:12px; color:var(--muted); margin-top:2px; }
+  .podium .stand { margin-top:9px; border-radius:10px 10px 0 0; background:#F2EAE1; }
+  .podium .p1 .stand { height:52px; background:var(--orange-soft); }
+  .podium .p2 .stand { height:36px; }
+  .podium .p3 .stand { height:26px; }
+  .podium .p.me .pnm { color:var(--orange); }
+
+  .rank { list-style:none; margin:0; padding:0; }
+  .rank li { display:flex; align-items:center; gap:11px; padding:9px 10px; border-radius:10px; font-size:14px; }
+  .rank li + li { margin-top:2px; }
+  .rank li.me { background:var(--orange-soft); }
+  .rank .rk { font-family:var(--mono); font-size:12.5px; min-width:2.8em; text-align:right; color:var(--muted); }
+  .rank li.me .rk { color:var(--orange); font-weight:700; }
+  .rank .nm { flex:1; min-width:0; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .rank .barwrap { flex:none; width:70px; height:6px; border-radius:999px; background:#F2EAE1; overflow:hidden; }
+  .rank .barwrap i { display:block; height:100%; background:var(--orange); border-radius:999px; }
+  .rank .sc { font-family:var(--mono); font-weight:700; color:var(--brown); min-width:3.6em; text-align:right; }
+  .rank .sc small { font-family:var(--mono); font-weight:400; color:var(--muted); }
+  @media (max-width:400px){ .rank .barwrap { display:none; } }
+
+  /* 결과 화면의 등수 */
+  .rankhero { display:flex; align-items:center; gap:15px; margin-top:20px; padding-top:18px; border-top:1px dashed var(--line); text-align:left; }
+  .rankhero .n { font-family:var(--mono); font-size:42px; font-weight:700; line-height:1; color:var(--orange); }
+  .rankhero .n small { font-size:17px; color:var(--brown); }
+  .rankhero .lab { font-size:13px; color:var(--muted); margin-top:5px; }
+  .rankhero .iconbtn { margin-left:auto; height:40px; }
+  .navrow { display:flex; gap:10px; margin-top:20px; }
+  .navrow .primary { flex:1; }
+  .qfade { animation:qin .22s ease-out; }
+  @keyframes qin { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+
+  .score { text-align:center; padding:8px 0 4px; }
+  .score .n { font-family:var(--mono); font-size:56px; font-weight:700; line-height:1; color:var(--brown); }
+  .score .d { font-family:var(--mono); font-size:20px; color:var(--muted); }
+  .score .who { font-size:14px; color:var(--muted); margin-top:10px; }
+  .bars { margin-top:20px; display:flex; flex-direction:column; gap:12px; }
+  .bar .brow { display:flex; justify-content:space-between; font-size:13px; margin-bottom:5px; }
+  .bar .brow b { font-family:var(--mono); font-weight:700; }
+  .track { height:8px; border-radius:999px; background:#F0E7DE; overflow:hidden; }
+  .fill { height:100%; background:var(--orange); border-radius:999px; }
+
+  .rev { border:1px solid var(--line); border-left:3px solid var(--no); border-radius:10px; padding:15px 16px; margin-bottom:10px; background:#fff; }
+  .rev.right { border-left-color:var(--ok); }
+  .rhead { display:flex; align-items:center; gap:8px; margin-bottom:9px; flex-wrap:wrap; }
+  .rno { font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted); }
+  .pageref { margin-left:auto; color:var(--brown); background:#F7F0E9; padding:3px 8px; border-radius:999px; }
+  .badge { font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; padding:3px 8px; border-radius:999px; background:var(--no-soft); color:var(--no); }
+  .rev.right .badge { background:var(--ok-soft); color:var(--ok); }
+  .rq { font-weight:700; font-size:15px; margin-bottom:10px; line-height:1.5; }
+  .line { font-size:13.5px; margin-bottom:4px; }
+  .line span { font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted); margin-right:7px; }
+  .mine { color:var(--no); } .ans { color:var(--ok); }
+  .why { font-size:13.5px; color:var(--muted); margin-top:9px; padding-top:9px; border-top:1px dashed var(--line); }
+  .rchoices { list-style:none; margin:0 0 4px; padding:0; }
+  .rchoices li { display:flex; gap:8px; align-items:flex-start; font-size:13.5px; line-height:1.5;
+    padding:6px 9px; border-radius:8px; margin-bottom:4px; color:var(--ink); background:#FBF8F5; }
+  .rchoices li .no { font-family:var(--mono); font-size:11.5px; color:var(--muted); padding-top:2px; }
+  .rchoices li .mark { margin-left:auto; font-family:var(--mono); font-size:10.5px; letter-spacing:.06em;
+    padding:2px 7px; border-radius:999px; white-space:nowrap; align-self:center; }
+  .rchoices li.is-answer { background:var(--ok-soft); color:var(--ok); font-weight:700; }
+  .rchoices li.is-answer .no, .rchoices li.is-answer .mark { color:var(--ok); }
+  .rchoices li.is-answer .mark { background:#CFEADF; }
+  .rchoices li.is-mine { background:var(--no-soft); color:var(--no); font-weight:700; }
+  .rchoices li.is-mine .no, .rchoices li.is-mine .mark { color:var(--no); }
+  .rchoices li.is-mine .mark { background:#F6D3CE; }
+  .fbtn { padding:9px 14px; font-size:13px; }
+  .fbtn[aria-pressed="true"] { border-color:var(--orange); background:var(--orange-soft); }
+
+  .divider { display:flex; align-items:center; gap:10px; margin:26px 0 14px; }
+  .divider .t { font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; color:var(--brown); }
+  .divider .l { flex:1; height:1px; background:var(--line); }
+  .foot { text-align:center; margin-top:22px; }
+  .link { background:none; border:0; color:var(--muted); font-size:12.5px; text-decoration:underline; text-underline-offset:3px; }
+  table { width:100%; border-collapse:collapse; font-size:13.5px; }
+  th,td { padding:9px 8px; text-align:left; border-bottom:1px solid var(--line); }
+  th { font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; color:var(--brown); font-weight:600; }
+  td.num, th.num { text-align:right; font-family:var(--mono); }
+  .scroll { overflow-x:auto; }
+  .empty { text-align:center; color:var(--muted); font-size:13.5px; padding:26px 0; }
+  .hist { display:flex; justify-content:space-between; align-items:center; gap:10px; width:100%; text-align:left; border:1px solid var(--line); background:#fff; border-radius:10px; padding:12px 14px; margin-bottom:8px; font-size:14px; color:var(--ink); }
+  .hist:hover { border-color:var(--orange); }
+  .hist b { font-family:var(--mono); }
+  .hide { display:none; }
+  .tabs { display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap; }
+  .tab { border:1px solid var(--line); background:#fff; color:var(--brown); border-radius:999px; padding:9px 16px; font-size:13.5px; font-weight:600; }
+  .tab[aria-pressed="true"] { background:var(--brown); border-color:var(--brown); color:#fff; }
+  .qrow { border:1px solid var(--line); border-radius:10px; padding:12px 14px; margin-bottom:8px; }
+  .qrow.off { opacity:.55; background:#FAF6F2; }
+  .qrow .meta { font-family:var(--mono); font-size:10px; letter-spacing:.06em; color:var(--muted); margin-bottom:4px; }
+  .qrow .txt { font-size:13px; font-weight:700; line-height:1.45; margin-bottom:6px; }
+  .qchoices { margin:0 0 6px; padding-left:20px; }
+  .qchoices li { font-size:12.5px; line-height:1.5; color:var(--ink); }
+  .qchoices li.correct { color:var(--ok); font-weight:700; }
+  .qwhy { font-size:12px; color:var(--muted); line-height:1.5; border-top:1px dashed var(--line); padding-top:6px; margin-bottom:8px; }
+  .qbtns { gap:6px; }
+  .qedit label { display:block; margin-bottom:7px; }
+  .qedit label > span { display:block; font-family:var(--mono); font-size:10px; letter-spacing:.08em; color:var(--brown); margin-bottom:3px; }
+  .qedit input[type=text], .qedit input[type=number], .qedit select, .qedit textarea {
+    padding:7px 9px; font-size:12.5px; border-radius:8px; }
+  .qedit .qgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+  .qedit .opt-line { display:flex; align-items:center; gap:8px; }
+  .qedit .opt-line > span { display:flex; align-items:center; gap:5px; margin:0; white-space:nowrap; font-size:11.5px; }
+  .qedit .opt-line input[type=radio] { width:auto; }
+  .qedit .opt-line input[type=text] { flex:1; }
+  .qedit .e-msg { font-size:12px; color:var(--no); align-self:center; }
+  @media (max-width:560px){ .qedit .qgrid { grid-template-columns:1fr; } }
+  .pager { display:flex; justify-content:space-between; align-items:center; margin-top:12px; font-size:13px; color:var(--muted); }
+
+  /* 캐릭터 */
+  .mast { overflow:hidden; }
+  .mast .wrap { position:relative; }
+  .mascot-head { position:absolute; right:-6px; bottom:-34px; height:132px; pointer-events:none; user-select:none; }
+  .examrow { display:flex; align-items:center; gap:13px; }
+  .examrow .thumb { width:44px; height:44px; object-fit:contain; flex:none; }
+  .examrow .body { flex:1; min-width:0; }
+  .banner { display:block; width:100%; max-width:340px; margin:0 auto 16px; }
+  .reaction { display:block; height:132px; margin:0 auto 6px; }
+  .emptyart { display:block; height:96px; margin:0 auto 10px; opacity:.9; }
+  .sitelogo { display:block; height:26px; margin:0 auto 14px; opacity:.85; }
+  .mast-logo { display:block; height:22px; margin:0 0 12px; }
+  .hero { text-align:center; padding:6px 0 22px; }
+  .hero img { height:34px; margin-bottom:12px; }
+  .hero p { margin:0; font-size:13.5px; color:var(--muted); }
+  @media (max-width:640px){ .mast-logo { height:19px; } .hero img { height:28px; } }
+  @media (max-width:640px){ .mascot-head { height:96px; bottom:-24px; right:-14px; } }
+  @media (max-width:420px){ .mascot-head { display:none; } }
+  @media (max-width:560px){ .mast h1{font-size:23px} .qtext{font-size:17.5px} .grid3{grid-template-columns:1fr} }
+  @media (prefers-reduced-motion:reduce){ .qfade{animation:none} }
+</style>
+</head>
+<body>
+
+<div class="mast">
+  <div class="wrap">
+    <button class="back hide" id="backBtn">← 전체 시험 목록</button>
+    <img class="mast-logo" id="mastLogo" alt="EBS 화상튜터링">
+    <p class="eyebrow">2026 화상튜터링 활동 가이드 VER 1.7</p>
+    <h1 id="mastTitle">가이드 학습 확인 퀴즈</h1>
+    <p id="mastSub">문항과 보기 순서가 응시할 때마다 새로 조합됩니다</p>
+    <img class="mascot-head" id="mastArt" alt="">
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="scr-setup" class="hide">
+    <div class="card">
+      <h2>Supabase 연결 설정이 없습니다</h2>
+      <p class="sub">config.js 파일이 없거나 값이 비어 있습니다. 아래에 입력하면 이 브라우저에만 저장해 임시로 사용합니다.</p>
+      <label class="field"><span class="lab">Project URL</span>
+        <input type="text" id="cfgUrl" placeholder="https://xxxxx.supabase.co" autocomplete="off"></label>
+      <label class="field"><span class="lab">anon public key</span>
+        <input type="text" id="cfgKey" placeholder="eyJhbGciOi..." autocomplete="off"></label>
+      <button class="primary" id="cfgSave">저장하고 새로고침</button>
+    </div>
+  </section>
+
+  <section id="scr-home" class="hide">
+    <div class="hero">
+      <img id="heroLogo" src="" alt="EBS 화상튜터링">
+      <p>활동 가이드 학습 확인 퀴즈</p>
+    </div>
+    <div class="card">
+      <h2>시험 선택</h2>
+      <p class="sub">응시할 시험을 고르세요. 링크를 직접 받으신 경우 그 주소로 접속하시면 됩니다.</p>
+      <div id="examList"><p class="empty">불러오는 중…</p></div>
+    </div>
+    <div class="card">
+      <h2>내 응시 기록</h2>
+      <p class="sub">같은 브라우저에서 응시한 기록입니다.
+        <button type="button" class="linkbtn" id="renameBtn">이름 바꾸기</button></p>
+      <div id="histList"><p class="empty">불러오는 중…</p></div>
+    </div>
+    <div class="foot"><button class="link" id="adminLink">담당자 화면</button></div>
+  </section>
+
+  <section id="scr-exam" class="hide">
+    <div class="card hide" id="resumeCard">
+      <h2>풀던 문제가 남아 있습니다</h2>
+      <p class="sub" id="resumeInfo"></p>
+      <div class="rowbtns">
+        <button class="primary" id="resumeBtn" style="width:auto;flex:1">이어풀기</button>
+        <button class="ghost" id="discardBtn">새로 시작</button>
+      </div>
+    </div>
+    <div class="card haspin" id="examCard"></div>
+    <div class="card" id="examHistCard">
+      <h2>이 시험의 내 기록</h2>
+      <div id="examHistList"><p class="empty">불러오는 중…</p></div>
+    </div>
+  </section>
+
+  <section id="scr-quiz" class="hide">
+    <div class="ledger">
+      <div class="ledger-top"><span id="ledgerWho"></span><span id="ledgerCount"></span></div>
+      <div class="dots" id="dots"></div>
+    </div>
+    <div class="card" id="qCard"></div>
+  </section>
+
+  <section id="scr-result" class="hide"></section>
+
+  <section id="scr-admin" class="hide">
+    <div class="card" id="gateCard">
+      <h2>담당자 확인</h2>
+      <p class="sub">시험을 만들고 결과를 보려면 확인 코드를 입력하세요.</p>
+      <label class="field"><span class="lab">확인 코드</span>
+        <input type="password" id="codeInput" placeholder="코드 입력" autocomplete="off"></label>
+      <button class="primary" id="gateBtn">열기</button>
+      <p class="notice hide warn" id="gateMsg"></p>
+    </div>
+    <div id="adminBody" class="hide"></div>
+    <div class="foot"><button class="link" id="adminBack">처음으로</button></div>
+  </section>
+</div>
+
+<script src="config.js" onerror="window.__ebsqNoConfig=true"></script>
+<script>
+(function () {
+  "use strict";
+
+  function lsGet(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function lsSet(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+
+  var CFG = window.EBSQ_CONFIG || {};
+  var SUPABASE_URL = CFG.url || CFG.SUPABASE_URL || lsGet("ebsq.url") || "";
+  var SUPABASE_ANON_KEY = CFG.anonKey || CFG.SUPABASE_ANON_KEY || lsGet("ebsq.anonKey") || "";
+
+  // ── 캐릭터 에셋 ─────────────────────────────────────────
+  var ASSET_BASE = "assets/";
+  var A = {
+    group:  "화상튜터링 캐릭터-61.png",        // 헤더 단체 컷
+    banner: "화상튜터링 캐릭터-63.png",        // 시험 화면 배너
+    heads:  ["튜링이_두상.png", "멘토_두상2.png", "멘티_두상.png"],
+    cheer:  "화상튜터링 캐릭터-46.png",        // 90% 이상
+    clap:   "화상튜터링 캐릭터-65.png",        // 70% 이상
+    okay:   "화상튜터링 캐릭터-58.png",        // 50% 이상
+    tryagain:"화상튜터링 캐릭터-55.png",       // 50% 미만
+    mascot: "화상튜터링 캐릭터-51.png",        // 빈 화면 · 제출 완료
+    logoNavy:  "ebs화상튜터링 로고_네이비.png",
+    logoWhite: "ebs화상튜터링 로고_화이트.png"
+  };
+  function img(name){ return encodeURI(ASSET_BASE + name); }
+
+  var $ = function(id){ return document.getElementById(id); };
+  var state = { name:"", exam:null, password:"", code:"", share:"", attemptId:null, qs:[], idx:0, answers:[], resume:null, adminPass:"", adminRole:"", adminLabel:"",
+                mentorType:"", fb:{} };   // fb: position → 즉시 채점 결과 (정오답·해설)
+  var MENTOR_TYPES = ["일반대학생","근로장학생","봉사활동","교사"];
+
+  function browserKey() {
+    var k = lsGet("ebsq.key");
+    if (!k) {
+      k = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+        : "bk-" + Date.now() + "-" + Math.random().toString(36).slice(2,10);
+      lsSet("ebsq.key", k);
+    }
+    return k;
+  }
+  var BKEY = browserKey();
+
+  async function rpc(fn, body) {
+    var res = await fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
+      method:"POST",
+      headers:{ "Content-Type":"application/json", "apikey":SUPABASE_ANON_KEY, "Authorization":"Bearer "+SUPABASE_ANON_KEY },
+      body: JSON.stringify(body)
+    });
+    var data = null;
+    try { data = await res.json(); } catch(e) {}
+    if (!res.ok) throw new Error((data && (data.message || data.hint)) || ("요청 실패 ("+res.status+")"));
+    return data;
+  }
+
+  function esc(s){
+    return String(s==null?"":s).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+    });
+  }
+  function fmt(ts){
+    if(!ts) return "-";
+    var d=new Date(ts);
+    return (d.getMonth()+1)+"/"+d.getDate()+" "+String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");
+  }
+  function show(id){
+    ["scr-setup","scr-home","scr-exam","scr-quiz","scr-result","scr-admin"].forEach(function(s){
+      $(s).classList.toggle("hide", s !== id);
+    });
+    $("backBtn").classList.toggle("hide", id === "scr-home" || id === "scr-setup");
+    window.scrollTo(0,0);
+  }
+  function composition(e){
+    if (!e) return "";
+    if (e.mode === "random") return "무작위 " + e.random_count + "문항";
+    var p = [];
+    if (e.easy_count) p.push("초급 " + e.easy_count);
+    if (e.mid_count)  p.push("중급 " + e.mid_count);
+    if (e.hard_count) p.push("고급 " + e.hard_count);
+    return p.join(" · ") + " (총 " + e.total + "문항)";
+  }
+  function examUrl(slug){
+    return location.origin + location.pathname + "#/e/" + encodeURIComponent(slug);
+  }
+
+  // ── 라우팅 ──────────────────────────────────────────────
+  function route() {
+    var art = $("mastArt");
+    if (art && !art.getAttribute("src")) art.src = img(A.group);
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) { setupScreen(); return; }
+    var h = location.hash || "";
+    var m = h.match(/^#\/e\/([^/?]+)/);
+    if (m) { openExam(decodeURIComponent(m[1])); return; }
+    var sm = h.match(/^#\/s\/([^/?]+)/);
+    if (sm) { openShare(decodeURIComponent(sm[1])); return; }
+    if (h.indexOf("#/admin") === 0) { show("scr-admin"); return; }
+    var am = h.match(/^#\/a\/([^/?]+)/);
+    if (am) { openPast(decodeURIComponent(am[1])); return; }
+    openHome();
+  }
+  window.addEventListener("hashchange", route);
+  $("backBtn").addEventListener("click", function(){ location.hash = ""; });
+
+  function setupScreen(){
+    show("scr-setup");
+    $("cfgUrl").value = lsGet("ebsq.url") || "";
+    $("cfgKey").value = lsGet("ebsq.anonKey") || "";
+    $("cfgSave").addEventListener("click", function(){
+      var u = $("cfgUrl").value.trim().replace(/\/+$/,"");
+      var k = $("cfgKey").value.trim();
+      if(!u || !k){ alert("두 값을 모두 입력해 주세요."); return; }
+      lsSet("ebsq.url", u); lsSet("ebsq.anonKey", k); location.reload();
+    });
+  }
+
+  // ── 메인 ────────────────────────────────────────────────
+  async function openHome(){
+    show("scr-home");
+    $("mastTitle").textContent = "가이드 학습 확인 퀴즈";
+    $("mastSub").textContent = "문항과 보기 순서가 응시할 때마다 새로 조합됩니다";
+    var box = $("examList");
+    try {
+      var list = await rpc("list_exams", {});
+      if (!list.length) {
+        box.innerHTML = '<img class="emptyart" src="' + img(A.mascot) + '" alt="">' +
+          '<p class="empty">공개된 시험이 없습니다. 담당자에게 링크를 받아 접속하세요.</p>';
+      } else {
+        box.innerHTML = "";
+        list.forEach(function(e, i){
+          var b = document.createElement("button");
+          b.className = "examrow"; b.type = "button";
+          b.innerHTML =
+            '<img class="thumb" src="' + img(A.heads[i % A.heads.length]) + '" alt="">' +
+            '<span class="body"><span class="t" style="display:block">' + esc(e.title) +
+            (e.has_password ? '<span class="chip">비밀번호</span>' : "") + (e.access_mode === "code" ? '<span class="chip">응시코드</span>' : "") + "</span>" +
+            '<span class="m" style="display:block">' + esc(composition(e)) +
+            (e.description ? " · " + esc(e.description) : "") + "</span></span>";
+          b.addEventListener("click", function(){ location.hash = "#/e/" + encodeURIComponent(e.slug); });
+          var wrap = document.createElement("div"); wrap.className = "examrow-wrap";
+          wrap.appendChild(b);
+          if (e.show_rank) wrap.appendChild(rankButton(e));
+          var sh = document.createElement("button");
+          sh.className = "examshare"; sh.type = "button"; sh.textContent = "공유";
+          sh.title = "이 시험 링크 공유";
+          sh.addEventListener("click", function(){ shareModal(e); });
+          wrap.appendChild(sh);
+          box.appendChild(wrap);
+        });
+      }
+    } catch(err){ box.innerHTML = '<p class="empty">'+esc(err.message)+"</p>"; }
+    loadHistory($("histList"), null);
+  }
+
+  async function loadHistory(box, slug){
+    box.innerHTML = '<p class="empty">불러오는 중…</p>';
+    try {
+      var list = await rpc("my_attempts", { p_browser_key: BKEY, p_exam_slug: slug });
+      if (!list.length) { box.innerHTML = '<p class="empty">아직 응시 기록이 없습니다.</p>'; return; }
+      box.innerHTML = "";
+      list.forEach(function(a){
+        var b = document.createElement("button");
+        b.className = "hist"; b.type = "button";
+        var right = a.status !== "submitted" ? "이어풀기"
+                  : (a.show_score ? a.score + " / " + a.total : "제출 완료");
+        b.innerHTML = "<span>" + (slug ? "" : esc(a.exam_title) + " · ") +
+          fmt(a.submitted_at || a.started_at) + "</span><b>" + right + "</b>";
+        b.addEventListener("click", function(){
+          if (a.status !== "submitted") { location.hash = "#/e/" + encodeURIComponent(a.exam_slug || ""); }
+          else location.hash = "#/a/" + encodeURIComponent(a.attempt_id);
+        });
+        box.appendChild(b);
+      });
+    } catch(e){ box.innerHTML = '<p class="empty">기록을 불러오지 못했습니다.</p>'; }
+  }
+
+  async function openPast(id){
+    try {
+      var d = await rpc("attempt_detail", { p_browser_key: BKEY, p_attempt_id: id });
+      if (d.exam) state.exam = d.exam;
+      renderResult(d, true); show("scr-result");
+    } catch(e){ alert(e.message); }
+  }
+
+  // ── 시험 화면 ───────────────────────────────────────────
+  async function openExam(slug){
+    show("scr-exam");
+    var card = $("examCard");
+    card.innerHTML = '<p class="empty">불러오는 중…</p>';
+    $("resumeCard").classList.add("hide");
+    var e;
+    try { e = await rpc("get_exam", { p_slug: slug }); }
+    catch(err){ card.innerHTML = '<p class="empty">'+esc(err.message)+"</p>"; return; }
+    if (!e) {
+      card.innerHTML = '<h2>시험을 찾을 수 없습니다</h2><p class="sub">링크가 정확한지 확인하거나 담당자에게 문의하세요.</p>';
+      $("examHistCard").classList.add("hide");
+      return;
+    }
+    $("examHistCard").classList.remove("hide");
+    state.exam = e;
+    state.name = (e.access_mode === "code") ? "" : nameFor(e.slug);
+    state.mentorType = e.ask_type ? (lsGet("ebsq.mtype") || "") : "";
+    $("mastTitle").textContent = e.title;
+    $("mastSub").textContent = composition(e);
+
+    var byCode = e.access_mode === "code";
+    card.innerHTML =
+      '<img class="banner" src="' + img(A.banner) + '" alt="">' +
+      "<h2>" + esc(e.title) + "</h2>" +
+      '<p class="sub">' + (e.description ? esc(e.description) + " · " : "") + esc(composition(e)) +
+      (e.feedback_mode === "instant" ? " · 즉시 채점" : "") +
+      (e.show_score ? "" : " · 점수 비공개") + "</p>" +
+      (byCode
+        ? '<label class="field"><span class="lab">응시코드 <span class="tiny">담당자에게 받은 코드를 입력하세요</span></span>' +
+          '<input type="text" id="codeIn" autocomplete="off" placeholder="예: EBS0142" style="text-transform:uppercase"></label>' +
+          '<div class="rowbtns" style="margin-bottom:14px"><button class="ghost" id="codeCheck">코드 확인</button>' +
+          '<span id="codeWho" style="align-self:center;font-size:14px;font-weight:700;color:var(--ok)"></span></div>'
+        : '<label class="field"><span class="lab">이름</span>' +
+          '<input type="text" id="nameInput" maxlength="20" autocomplete="off" placeholder="이름 또는 닉네임" value="' + esc(state.name) + '"></label>') +
+      (e.has_password && !byCode ?
+        '<label class="field"><span class="lab">접근 비밀번호</span>' +
+        '<input type="password" id="pwInput" autocomplete="off" placeholder="담당자에게 받은 비밀번호"></label>' : "") +
+      (e.ask_type
+        ? '<div class="field"><span class="lab">멘토 유형 <span class="tiny">고른 유형에 해당하는 문항만 나옵니다</span></span>' +
+          '<div class="picks" id="typePicks">' +
+          MENTOR_TYPES.map(function(t){
+            return '<button type="button" data-t="' + esc(t) + '" aria-pressed="' +
+                   (state.mentorType === t ? "true" : "false") + '">' + esc(t) + "</button>";
+          }).join("") + "</div></div>"
+        : "") +
+      '<button class="primary" id="startBtn">퀴즈 시작</button>' +
+      '<p class="notice" id="startNotice">난이도 순서대로 출제되며, 보기 순서도 매번 섞입니다.' +
+      (byCode ? "<br>응시코드를 확인하면 이름이 자동으로 설정됩니다." : "") +
+      (e.ask_type ? "<br>멘토 유형을 고르면 그 유형에 해당하는 문항만 출제됩니다." : "") +
+      (e.feedback_mode === "instant" ? "<br>한 문항을 풀 때마다 바로 정답과 해설이 나옵니다. 고른 답은 바꿀 수 없습니다." : "") +
+      (e.show_score ? "" : "<br>이 시험은 점수와 정답이 공개되지 않습니다.") + "</p>";
+
+    if (e.ask_type) {
+      var picks = $("typePicks");
+      picks.addEventListener("click", function(ev){
+        var b = ev.target.closest("button[data-t]"); if (!b) return;
+        state.mentorType = b.getAttribute("data-t");
+        lsSet("ebsq.mtype", state.mentorType);
+        Array.prototype.forEach.call(picks.children, function(c){
+          c.setAttribute("aria-pressed", c === b ? "true" : "false");
+        });
+        syncStart();
+      });
+    }
+
+    // 시작 버튼이 열릴 조건: 이름(또는 코드 확인) + 필요하면 멘토 유형
+    function syncStart(){
+      var ok = !!state.name && (!e.ask_type || !!state.mentorType);
+      $("startBtn").disabled = !ok;
+    }
+
+    if (byCode) {
+      state.code = ""; state.name = "";
+      $("startBtn").disabled = true;
+      var check = async function(){
+        var c = $("codeIn").value.trim();
+        if (!c) return;
+        var n = $("startNotice");
+        try {
+          var r = await rpc("verify_access_code", { p_exam_slug: e.slug, p_code: c });
+          state.code = c; state.name = r.name;
+          $("codeWho").textContent = r.name + " 님";
+          syncStart();
+          n.className = "notice";
+          n.textContent = e.ask_type && !state.mentorType
+            ? "확인되었습니다. 멘토 유형을 고른 뒤 시작해 주세요."
+            : "확인되었습니다. 시작 버튼을 눌러 주세요.";
+        } catch(err){
+          state.code = ""; state.name = "";
+          $("codeWho").textContent = "";
+          syncStart();
+          n.className = "notice warn"; n.textContent = err.message;
+        }
+      };
+      $("codeCheck").addEventListener("click", check);
+      $("codeIn").addEventListener("keydown", function(ev){ if(ev.key==="Enter") check(); });
+    } else {
+      $("nameInput").addEventListener("input", function(ev){
+        state.name = ev.target.value.trim();
+        syncStart();
+      });
+    }
+    syncStart();
+    $("startBtn").addEventListener("click", startQuiz);
+    // 랭킹을 공개한 시험이면 카드 오른쪽 위에 그래프 아이콘을 단다.
+    if (e.show_rank) card.appendChild(rankButton(e, "cardtop"));
+
+    loadHistory($("examHistList"), slug);
+    loadResume(slug);
+  }
+
+  async function startQuiz(){
+    var btn = $("startBtn");
+    var e = state.exam || {};
+    btn.disabled = true; btn.textContent = "문항을 뽑는 중…";
+    var byCode = e.access_mode === "code";
+    if (!byCode) rememberName(e.slug, state.name);
+    var pw = $("pwInput") ? $("pwInput").value : null;
+    try {
+      var data = await rpc("start_attempt", {
+        p_browser_key: BKEY, p_name: state.name,
+        p_exam_slug: e.slug, p_password: pw,
+        p_code: byCode ? state.code : null,
+        p_mentor_type: e.ask_type ? state.mentorType : null
+      });
+      if (data && data.name) state.name = data.name;
+      state.password = pw;
+      $("resumeCard").classList.add("hide");
+      enterQuiz(data);
+    } catch(err){
+      var n = $("startNotice"); n.className = "notice warn"; n.textContent = err.message;
+    }
+    btn.textContent = "퀴즈 시작";
+    btn.disabled = !state.name || (!!e.ask_type && !state.mentorType);
+  }
+
+  function enterQuiz(data){
+    state.attemptId = data.attempt_id;
+    state.qs = data.questions || [];
+    state.answers = state.qs.map(function(q){
+      return (q.chosen_index === null || q.chosen_index === undefined) ? null : q.chosen_index;
+    });
+    // 이어풀기로 돌아온 경우, 이미 정답을 본 문항은 그 결과를 그대로 복원한다.
+    state.fb = {};
+    state.qs.forEach(function(q){
+      if (q.revealed) state.fb[q.position] = q;
+    });
+    var blank = state.answers.indexOf(null);
+    state.idx = blank < 0 ? 0 : blank;
+    $("ledgerWho").textContent = state.name + (state.exam ? " · " + state.exam.title : "");
+    buildDots(); show("scr-quiz"); renderQ();
+  }
+
+  // ── 시험별 이름 바꾸기 ──────────────────────────────────
+  //   이름은 회차(attempts.display_name)에 저장되므로 시험마다 다르게 쓸 수 있다.
+  //   바꾸면 그 시험의 내 기록 전체와 랭킹 표시가 함께 바뀐다.
+  //   응시코드로 응시한 회차는 명부 이름이 기준이라 바꿀 수 없다.
+  $("renameBtn").addEventListener("click", renameModal);
+
+  function examNameKey(slug){ return "ebsq.name." + slug; }
+
+  // 그 시험에서 마지막에 쓴 이름 → 없으면 이 단말의 기본 이름
+  function nameFor(slug){
+    return (slug && lsGet(examNameKey(slug))) || lsGet("ebsq.name") || "";
+  }
+
+  function rememberName(slug, name){
+    if (!name) return;
+    if (slug) lsSet(examNameKey(slug), name);
+    lsSet("ebsq.name", name);   // 처음 보는 시험의 기본값으로도 쓴다
+  }
+
+  function renameModal(){
+    var box = document.createElement("div"); box.className = "card";
+    box.innerHTML =
+      "<h2>이름 바꾸기</h2>" +
+      "<p class='sub'>퀴즈마다 다른 이름으로 풀 수 있습니다. 바꾸면 그 퀴즈의 내 기록과 랭킹보드 표시가 함께 바뀝니다.</p>" +
+      '<div id="rnList"><p class="empty">불러오는 중…</p></div>' +
+      '<div class="rowbtns" style="margin-top:14px"><button class="ghost" id="rnClose">닫기</button></div>';
+    openModal(box);
+    $("rnClose").addEventListener("click", closeModal);
+    loadNames();
+  }
+
+  function loadNames(){
+    var host = $("rnList");
+    if (!host) return;
+    host.innerHTML = '<p class="empty">불러오는 중…</p>';
+    rpc("my_exam_names", { p_browser_key: BKEY }).then(function(d){
+      var list = (d && d.exams) || [];
+      if (!list.length) {
+        host.innerHTML = '<p class="empty">아직 응시 기록이 없습니다. 한 번 풀고 나면 퀴즈별로 이름을 정할 수 있습니다.</p>';
+        return;
+      }
+      host.innerHTML = "";
+      list.forEach(function(row){ host.appendChild(nameRow(row)); });
+    }).catch(function(err){
+      host.innerHTML = '<p class="empty">' + esc(err.message) + "</p>";
+    });
+  }
+
+  // className 을 통째로 갈아끼우면 식별용 클래스가 날아간다. 유지하면서 바꾼다.
+  function showMsg(el, text, warn){
+    el.className = "notice rn-msg" + (warn ? " warn" : "");
+    el.textContent = text;
+  }
+
+  function nameRow(row){
+    var d = document.createElement("div");
+    d.style.cssText = "border:1px solid var(--line);border-radius:12px;padding:13px 14px;margin-bottom:10px";
+    // 모든 회차가 명부(응시코드)로 고정된 시험은 바꿀 수 없다.
+    var allLocked = row.locked >= row.attempts;
+    d.innerHTML =
+      '<div style="font-size:14.5px;font-weight:700;margin-bottom:2px">' + esc(row.exam_title) + "</div>" +
+      '<div style="font-size:12px;color:var(--muted);margin-bottom:9px">기록 ' + row.attempts + "건" +
+      (row.locked ? " · 응시코드 " + row.locked + "건은 명부 이름 고정" : "") + "</div>" +
+      (allLocked
+        ? '<p class="notice">이 퀴즈는 응시코드로 응시해 명부 이름(' + esc(row.name || "") +
+          ')으로 기록됩니다. 이름을 바꾸려면 담당자에게 문의하세요.</p>'
+        : '<div class="rowbtns">' +
+          '<input type="text" class="rn-in" maxlength="20" autocomplete="off" value="' + esc(row.name || "") +
+          '" style="flex:1;min-width:0;padding:9px 11px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font-size:14px">' +
+          '<button class="ghost rn-save" type="button" style="width:auto;padding:9px 15px;font-size:13px">저장</button></div>' +
+          '<p class="notice hide rn-msg"></p>');
+
+    if (allLocked) return d;
+
+    var inp = d.querySelector(".rn-in");
+    var msg = d.querySelector(".rn-msg");
+    var save = async function(){
+      var v = inp.value.trim();
+      if (!v) { showMsg(msg, "이름을 입력해 주세요.", true); return; }
+      var btn = d.querySelector(".rn-save");
+      btn.disabled = true; btn.textContent = "저장 중…";
+      try {
+        await rpc("rename_exam_name", { p_browser_key: BKEY, p_exam_slug: row.exam_slug, p_name: v });
+        lsSet(examNameKey(row.exam_slug), v);
+        lsSet("ebsq.name", v);
+        showMsg(msg, "바뀌었습니다.", false);
+        btn.textContent = "저장"; btn.disabled = false;
+        loadHistory($("histList"), null);
+      } catch(err){
+        showMsg(msg, err.message, true);
+        btn.textContent = "저장"; btn.disabled = false;
+      }
+    };
+    d.querySelector(".rn-save").addEventListener("click", save);
+    inp.addEventListener("keydown", function(ev){ if (ev.key === "Enter") save(); });
+    return d;
+  }
+
+  // ── 랭킹보드 ────────────────────────────────────────────
+  var RANK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ' +
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M5 20V12M12 20V4M19 20v-5"/></svg>';
+
+  function rankButton(exam, cls){
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "iconbtn" + (cls ? " " + cls : "");
+    b.title = "랭킹보드 보기";
+    b.setAttribute("aria-label", "랭킹보드 보기");
+    b.innerHTML = RANK_ICON;
+    b.addEventListener("click", function(ev){ ev.stopPropagation(); rankModal(exam); });
+    return b;
+  }
+
+  function rankModal(exam){
+    var box = document.createElement("div"); box.className = "card";
+    box.innerHTML = "<h2>랭킹보드</h2>" +
+      '<p class="sub">' + esc(exam.title || "") + " · 불러오는 중…</p>" +
+      '<div id="rankBody"><p class="empty">불러오는 중…</p></div>' +
+      '<div class="rowbtns" style="margin-top:16px"><button class="ghost" id="rankClose">닫기</button></div>';
+    openModal(box);
+    $("rankClose").addEventListener("click", closeModal);
+    rpc("exam_ranking", { p_exam_slug: exam.slug, p_limit: 20, p_browser_key: BKEY })
+      .then(function(d){
+        var sub = box.querySelector(".sub");
+        if (!d || !d.open) {
+          sub.textContent = esc(exam.title || "");
+          $("rankBody").innerHTML = '<p class="empty">이 시험은 랭킹을 공개하지 않습니다.</p>';
+          return;
+        }
+        sub.textContent = (d.exam_title || exam.title || "") + " · " + (d.players || 0) + "명 참여";
+        $("rankBody").innerHTML = rankHtml(d);
+      })
+      .catch(function(err){
+        $("rankBody").innerHTML = '<p class="empty">' + esc(err.message) + "</p>";
+      });
+  }
+
+  // 결과 화면 — 점수 카드 아래에 "몇 등인지" 크게 붙인다.
+  async function showMyRank(card, exam){
+    var d;
+    try { d = await rpc("exam_ranking", { p_exam_slug: exam.slug, p_limit: 20, p_browser_key: BKEY }); }
+    catch(e){ return; }
+    if (!d || !d.open) return;
+
+    var box = document.createElement("div");
+    box.className = "rankhero";
+    box.innerHTML = d.me
+      ? '<div><div class="n">' + d.me.rank + "<small>위</small></div>" +
+        '<div class="lab">' + (d.players || 0) + "명 중" +
+        (d.me.rank === 1 ? " · 1등입니다!" : "") + "</div></div>"
+      : '<div><div class="n" style="font-size:26px">랭킹보드</div>' +
+        '<div class="lab">' + (d.players || 0) + "명이 참여했습니다</div></div>";
+    box.appendChild(rankButton(exam));
+    card.appendChild(box);
+  }
+
+  // 랭킹 본문: 내 등수 배너 → 1~3위 시상대 → 4위부터 목록
+  function rankHtml(d){
+    var rows = d.rows || [];
+    if (!rows.length) {
+      return '<p class="empty">아직 제출된 기록이 없습니다. 첫 번째로 올라가 보세요.</p>';
+    }
+    var html = "";
+
+    if (d.me) {
+      html +=
+        '<div class="rankme"><div>' +
+        '<div class="big">' + d.me.rank + '<small>위</small></div>' +
+        '<div class="meta">' + (d.players || 0) + "명 중</div></div>" +
+        '<div class="sc">' + d.me.score + " / " + d.me.total + "<small>내 최고 점수</small></div></div>";
+    }
+
+    var top = rows.slice(0, 3);
+    if (top.length === 3) {
+      // 가운데가 1위가 되도록 2 · 1 · 3 순서로 배치한다.
+      html += '<div class="podium">' + [top[1], top[0], top[2]].map(function(r){
+        return '<div class="p p' + r.rank + (r.is_me ? " me" : "") + '">' +
+          '<div class="medal">' + r.rank + "</div>" +
+          '<div class="pnm">' + esc(r.name || "") + (r.is_me ? " (나)" : "") + "</div>" +
+          '<div class="psc">' + r.score + " / " + r.total + "</div>" +
+          '<div class="stand"></div></div>';
+      }).join("") + "</div>";
+    }
+
+    var listed = top.length === 3 ? rows.slice(3) : rows;
+    if (listed.length) {
+      html += '<ul class="rank">' + listed.map(function(r){
+        var pct = r.total ? Math.round(r.score / r.total * 100) : 0;
+        return '<li' + (r.is_me ? ' class="me"' : "") + ">" +
+          '<span class="rk">' + r.rank + "위</span>" +
+          '<span class="nm">' + esc(r.name || "") + (r.is_me ? " (나)" : "") + "</span>" +
+          '<span class="barwrap"><i style="width:' + pct + '%"></i></span>' +
+          '<span class="sc">' + r.score + "<small> / " + r.total + "</small></span></li>";
+      }).join("") + "</ul>";
+    }
+
+    html += '<p class="notice">한 사람당 최고 점수 한 번만 올라갑니다. 동점이면 먼저 제출한 순서입니다.</p>';
+    return html;
+  }
+
+  async function loadResume(slug){
+    try {
+      var d = await rpc("resume_attempt", { p_browser_key: BKEY, p_exam_slug: slug });
+      if (!d || !d.attempt_id) { $("resumeCard").classList.add("hide"); return; }
+      state.resume = d;
+      var done = (d.questions||[]).filter(function(q){ return q.chosen_index !== null && q.chosen_index !== undefined; }).length;
+      $("resumeInfo").textContent = fmt(d.started_at) + " 시작 · " + done + " / " + d.total + "문항 응답함";
+      $("resumeCard").classList.remove("hide");
+    } catch(e){ $("resumeCard").classList.add("hide"); }
+  }
+  $("resumeBtn").addEventListener("click", function(){
+    if (state.resume){ $("resumeCard").classList.add("hide"); enterQuiz(state.resume); }
+  });
+  $("discardBtn").addEventListener("click", function(){
+    $("resumeCard").classList.add("hide");
+    if ($("startBtn")) $("startBtn").click();
+  });
+
+  // ── 공유된 문항 조합으로 응시 ───────────────────────────
+  async function openShare(token){
+    show("scr-exam");
+    var card = $("examCard");
+    card.innerHTML = '<p class="empty">불러오는 중…</p>';
+    $("resumeCard").classList.add("hide");
+    $("examHistCard").classList.add("hide");
+
+    var d;
+    try { d = await rpc("get_share", { p_token: token }); }
+    catch(err){ card.innerHTML = '<p class="empty">'+esc(err.message)+"</p>"; return; }
+    if (!d) {
+      card.innerHTML = "<h2>공유 링크를 찾을 수 없습니다</h2>" +
+        '<p class="sub">링크가 만료되었거나 주소가 정확하지 않습니다.</p>';
+      return;
+    }
+
+    var e = d.exam;
+    state.exam = e; state.share = d.token;
+    state.name = (e.access_mode === "code") ? "" : nameFor(e.slug);
+    $("mastTitle").textContent = e.title;
+    $("mastSub").textContent = "공유받은 문항 " + d.total + "문항";
+
+    var byCode = e.access_mode === "code";
+    card.innerHTML =
+      '<img class="banner" src="' + img(A.banner) + '" alt="">' +
+      "<h2>" + esc(e.title) + "</h2>" +
+      '<p class="sub">' + (d.creator_name ? esc(d.creator_name) + " 님이 푼 문항 그대로 · " : "") +
+      d.total + "문항" + (d.taken ? " · " + d.taken + "명이 풀었습니다" : "") + "</p>" +
+      (byCode
+        ? '<label class="field"><span class="lab">응시코드</span>' +
+          '<input type="text" id="codeIn" autocomplete="off" placeholder="담당자에게 받은 코드" style="text-transform:uppercase"></label>' +
+          '<div class="rowbtns" style="margin-bottom:14px"><button class="ghost" id="codeCheck">코드 확인</button>' +
+          '<span id="codeWho" style="align-self:center;font-size:14px;font-weight:700;color:var(--ok)"></span></div>'
+        : '<label class="field"><span class="lab">이름</span>' +
+          '<input type="text" id="nameInput" maxlength="20" autocomplete="off" placeholder="이름 또는 닉네임" value="' + esc(state.name) + '"></label>') +
+      (e.has_password && !byCode ?
+        '<label class="field"><span class="lab">접근 비밀번호</span>' +
+        '<input type="password" id="pwInput" autocomplete="off"></label>' : "") +
+      '<button class="primary" id="startBtn">같은 문제 풀기</button>' +
+      '<p class="notice" id="startNotice">문항과 순서는 원본 그대로이고 보기 순서만 새로 섞입니다.</p>';
+
+    if (byCode) {
+      state.code = ""; state.name = "";
+      $("startBtn").disabled = true;
+      var check = async function(){
+        var c = $("codeIn").value.trim(); if (!c) return;
+        var n = $("startNotice");
+        try {
+          var r = await rpc("verify_access_code", { p_exam_slug: e.slug, p_code: c });
+          state.code = c; state.name = r.name;
+          $("codeWho").textContent = r.name + " 님";
+          $("startBtn").disabled = false;
+          n.className = "notice"; n.textContent = "확인되었습니다. 시작 버튼을 눌러 주세요.";
+        } catch(err){
+          state.code = ""; state.name = ""; $("codeWho").textContent = "";
+          $("startBtn").disabled = true;
+          n.className = "notice warn"; n.textContent = err.message;
+        }
+      };
+      $("codeCheck").addEventListener("click", check);
+      $("codeIn").addEventListener("keydown", function(ev){ if(ev.key==="Enter") check(); });
+    } else {
+      $("nameInput").addEventListener("input", function(ev){
+        state.name = ev.target.value.trim();
+        $("startBtn").disabled = !state.name;
+      });
+      $("startBtn").disabled = !state.name;
+    }
+
+    $("startBtn").addEventListener("click", async function(){
+      var btn = this;
+      btn.disabled = true; btn.textContent = "준비 중…";
+      if (!byCode) rememberName(e.slug, state.name);
+      try {
+        var data = await rpc("start_attempt_from_share", {
+          p_browser_key: BKEY, p_name: state.name, p_token: state.share,
+          p_password: $("pwInput") ? $("pwInput").value : null,
+          p_code: byCode ? state.code : null
+        });
+        if (data && data.name) state.name = data.name;
+        enterQuiz(data);
+      } catch(err){
+        var n2 = $("startNotice"); n2.className = "notice warn"; n2.textContent = err.message;
+        btn.textContent = "같은 문제 풀기"; btn.disabled = false;
+      }
+    });
+  }
+
+  // ── 진행 표시 ───────────────────────────────────────────
+  function buildDots(){
+    var host = $("dots"); host.innerHTML = "";
+    state.qs.forEach(function(_,i){
+      var d = document.createElement("span"); d.className="dot"; d.dataset.i=i; host.appendChild(d);
+    });
+  }
+  function paintDots(){
+    Array.prototype.forEach.call($("dots").children, function(d){
+      var i = Number(d.dataset.i);
+      d.className = "dot" + (i===state.idx ? " now" : (state.answers[i]!==null ? " done" : ""));
+    });
+    var done = state.answers.filter(function(a){ return a!==null; }).length;
+    $("ledgerCount").textContent = done + " / " + state.qs.length;
+  }
+
+  // ── 문항 ────────────────────────────────────────────────
+  function isInstant(){
+    return !!(state.exam && state.exam.feedback_mode === "instant" && state.exam.show_score);
+  }
+
+  function renderQ(){
+    var q = state.qs[state.idx];
+    var card = $("qCard");
+    var fb = state.fb[q.position];          // 이 문항의 즉시 채점 결과 (없으면 아직 안 푼 것)
+    card.className = "card qfade"; card.innerHTML = "";
+
+    var head = document.createElement("div");
+    head.className = "qhead";
+    head.innerHTML = '<span class="tag">' + (state.idx+1) + " / " + state.qs.length + "</span>" +
+      '<span class="tag lv">' + esc(q.level) + "</span>" +
+      '<span class="tag">' + esc(q.section) + "</span>";
+    card.appendChild(head);
+
+    var t = document.createElement("p"); t.className="qtext"; t.textContent=q.body; card.appendChild(t);
+
+    var opts = document.createElement("div"); opts.className="opts";
+    q.choices.forEach(function(text,i){
+      var b = document.createElement("button");
+      b.className="opt"; b.type="button";
+      b.setAttribute("aria-pressed", state.answers[state.idx]===i ? "true":"false");
+      b.innerHTML = '<span class="num">'+(i+1)+"</span><span></span>";
+      b.lastChild.textContent = text;
+      if (fb) {
+        // 이미 정답을 본 문항은 잠근다. 정답과 내가 고른 답을 함께 표시한다.
+        var isAns = i === fb.answer_index, isMine = i === fb.chosen_index;
+        b.classList.add("locked");
+        if (isAns) b.classList.add("is-answer");
+        else if (isMine) b.classList.add("is-wrong");
+        if (isAns || isMine) {
+          var mk = document.createElement("span");
+          mk.className = "omark";
+          mk.textContent = isAns ? (isMine ? "정답 · 내 답" : "정답") : "내 답";
+          b.appendChild(mk);
+        }
+        b.disabled = true;
+      } else {
+        b.addEventListener("click", function(){ pick(i); });
+      }
+      opts.appendChild(b);
+    });
+    card.appendChild(opts);
+
+    if (fb) card.appendChild(feedbackBox(fb));
+
+    var nav = document.createElement("div"); nav.className="navrow";
+    var prev = document.createElement("button");
+    prev.className="ghost"; prev.type="button"; prev.textContent="이전";
+    prev.disabled = state.idx===0;
+    prev.addEventListener("click", function(){ state.idx--; renderQ(); });
+    nav.appendChild(prev);
+    var next = document.createElement("button");
+    next.className="primary"; next.type="button";
+    var last = state.idx === state.qs.length-1;
+    next.textContent = last ? "제출하기" : "다음";
+    // 즉시 채점에서는 답을 고르기 전까지 다음으로 넘어갈 수 없다.
+    next.disabled = isInstant() && !fb;
+    next.addEventListener("click", function(){ if(last) submit(next); else { state.idx++; renderQ(); } });
+    nav.appendChild(next);
+    card.appendChild(nav);
+    paintDots();
+  }
+
+  function feedbackBox(fb){
+    var ok = !!fb.is_correct;
+    var page = fb.source_guide ? fb.source_guide + " " + fb.source_page + "쪽" : "";
+    var box = document.createElement("div");
+    box.className = "fb " + (ok ? "ok" : "no");
+    box.innerHTML =
+      '<div class="fbhead"><span>' + (ok ? "정답입니다" : "아쉬워요") + "</span>" +
+      (page ? '<span class="fbpage">' + esc(page) + "</span>" : "") + "</div>" +
+      '<div class="fbwhy">' + esc(fb.explanation || "") + "</div>";
+    return box;
+  }
+
+  function pick(i){
+    var q = state.qs[state.idx];
+    state.answers[state.idx] = i;
+    Array.prototype.forEach.call($("qCard").querySelectorAll(".opt"), function(b,bi){
+      b.setAttribute("aria-pressed", bi===i ? "true":"false");
+    });
+    paintDots();
+
+    if (isInstant()) { reveal(q, i); return; }
+
+    persist(q.position, i);
+    if (state.idx < state.qs.length-1) setTimeout(function(){ state.idx++; renderQ(); }, 220);
+  }
+
+  // 즉시 채점 — 서버가 이 문항 하나만 채점해서 정오답과 해설을 돌려준다.
+  async function reveal(q, chosen){
+    Array.prototype.forEach.call($("qCard").querySelectorAll(".opt"), function(b){ b.disabled = true; });
+    try {
+      var r = await rpc("check_answer", {
+        p_browser_key: BKEY, p_attempt_id: state.attemptId,
+        p_position: q.position, p_chosen: chosen
+      });
+      state.fb[q.position] = r;
+      // 서버가 잠근 값이 기준이다. (이미 공개된 문항이면 처음 고른 답이 돌아온다)
+      state.answers[state.idx] = r.chosen_index;
+      renderQ();
+    } catch(err){
+      // 채점에 실패하면 풀이를 막지 않는다. 응답만 저장하고 넘어간다.
+      persist(q.position, chosen);
+      Array.prototype.forEach.call($("qCard").querySelectorAll(".opt"), function(b){ b.disabled = false; });
+      var nav = $("qCard").querySelector(".navrow .primary");
+      if (nav) nav.disabled = false;
+    }
+  }
+
+  function persist(position, chosen){
+    var body = { p_browser_key:BKEY, p_attempt_id:state.attemptId, p_position:position, p_chosen:chosen };
+    rpc("save_answer", body).catch(function(){
+      setTimeout(function(){ rpc("save_answer", body).catch(function(){}); }, 1200);
+    });
+  }
+
+  async function submit(btn){
+    var missing = state.answers.indexOf(null);
+    if (missing >= 0){
+      state.idx = missing; renderQ();
+      alert("아직 답하지 않은 문항이 있습니다. 해당 문항으로 이동합니다.");
+      return;
+    }
+    btn.disabled = true; btn.textContent = "채점 중…";
+    var payload = state.qs.map(function(q,i){ return { position:q.position, chosen:state.answers[i] }; });
+    try {
+      var d = await rpc("submit_attempt", { p_browser_key:BKEY, p_attempt_id:state.attemptId, p_answers:payload });
+      renderResult(d, false); show("scr-result");
+    } catch(e){
+      alert("채점 결과를 저장하지 못했습니다. " + e.message);
+      btn.disabled=false; btn.textContent="제출하기";
+    }
+  }
+
+  // ── 결과 ────────────────────────────────────────────────
+  function renderResult(d, isPast){
+    var host = $("scr-result"); host.innerHTML = "";
+    var items = d.items || [];
+    var examTitle = d.exam ? d.exam.title : "";
+    // 서버가 준 표시 이름을 우선한다. (이름을 바꿨거나, 응시코드 시험의 명부 이름)
+    var who = d.name || state.name || "";
+
+    var top = document.createElement("div"); top.className="card";
+    if (d.show_score === false) {
+      top.innerHTML =
+        '<img class="reaction" src="' + img(A.mascot) + '" alt="">' +
+        '<div class="score"><span class="n" style="font-size:34px">제출 완료</span>' +
+        '<p class="who">' + esc(who) + (examTitle ? " · " + esc(examTitle) : "") + "</p></div>" +
+        '<p class="notice">제출이 완료되었습니다. 이 시험은 점수와 정답이 공개되지 않습니다. 결과는 담당자가 확인합니다.</p>';
+      host.appendChild(top);
+    } else {
+      var byLv = {};
+      items.forEach(function(it){
+        byLv[it.level] = byLv[it.level] || [0,0];
+        byLv[it.level][1]++;
+        if (it.is_correct) byLv[it.level][0]++;
+      });
+      var lv = ["초급","중급","고급"].filter(function(k){ return byLv[k]; }).map(function(k){
+        return '<div class="bar"><div class="brow"><span>'+k+"</span><b>"+byLv[k][0]+" / "+byLv[k][1]+"</b></div>" +
+          '<div class="track"><div class="fill" style="width:'+(byLv[k][0]/byLv[k][1]*100)+'%"></div></div></div>';
+      }).join("");
+      var ratio = d.total ? d.score / d.total : 0;
+      var face = ratio >= 0.9 ? A.cheer : ratio >= 0.7 ? A.clap : ratio >= 0.5 ? A.okay : A.tryagain;
+      var word = ratio >= 0.9 ? "완벽해요!" : ratio >= 0.7 ? "잘하고 있어요" :
+                 ratio >= 0.5 ? "조금만 더!" : "해설을 함께 봐요";
+      top.innerHTML =
+        '<img class="reaction" src="' + img(face) + '" alt="">' +
+        '<div class="score"><span class="n">'+d.score+'</span><span class="d"> / '+d.total+"</span>" +
+        '<p style="font-size:15px;font-weight:700;color:var(--brown);margin:12px 0 0">'+word+"</p>" +
+        '<p class="who">' + esc(who) + (examTitle ? " · " + esc(examTitle) : "") +
+        (isPast ? " · " + fmt(d.submitted_at) + " 응시" : "") + "</p></div>" +
+        '<div class="bars">' + lv + "</div>";
+      host.appendChild(top);
+
+      // 랭킹을 공개한 시험이면 점수 카드 안에 등수를 크게 보여준다.
+      if (d.exam && d.exam.show_rank && d.exam.slug) showMyRank(top, d.exam);
+
+      var wrong = items.filter(function(i){ return !i.is_correct; }).length;
+      var div = document.createElement("div"); div.className="divider";
+      div.innerHTML = '<span class="t">' + items.length + '문항 다시 보기</span><span class="l"></span>';
+      host.appendChild(div);
+
+      var hint = document.createElement("p");
+      hint.style.cssText = "font-size:13.5px;color:var(--muted);margin:0 0 12px";
+      hint.textContent = "맞힌 문항도 해설을 확인하세요. 찍어서 맞힌 문항이 있을 수 있습니다.";
+      host.appendChild(hint);
+
+      var filter = document.createElement("div");
+      filter.className="rowbtns"; filter.style.marginBottom="14px";
+      var rev = document.createElement("div");
+      [["all","전체 "+items.length],["wrong","오답 "+wrong],["right","정답 "+d.score]].forEach(function(f){
+        var b=document.createElement("button");
+        b.className="ghost fbtn"; b.type="button"; b.textContent=f[1];
+        b.setAttribute("aria-pressed", f[0]==="all"?"true":"false");
+        b.addEventListener("click", function(){
+          Array.prototype.forEach.call(filter.children,function(c){ c.setAttribute("aria-pressed","false"); });
+          b.setAttribute("aria-pressed","true");
+          Array.prototype.forEach.call(rev.children,function(box){
+            var ok=box.classList.contains("right");
+            box.style.display = (f[0]==="all"||(f[0]==="wrong"&&!ok)||(f[0]==="right"&&ok)) ? "" : "none";
+          });
+        });
+        filter.appendChild(b);
+      });
+      host.appendChild(filter);
+
+      items.forEach(function(it,n){
+        var ok = !!it.is_correct;
+        var page = it.source_guide ? it.source_guide + " " + it.source_page + "쪽" : "";
+        var box = document.createElement("div");
+        box.className = "rev" + (ok ? " right" : "");
+        box.innerHTML =
+          '<div class="rhead"><span class="rno">'+(n+1)+"</span>" +
+          '<span class="badge">'+(ok?"정답":"오답")+"</span>" +
+          '<span class="rno">'+esc(it.level)+" · "+esc(it.section)+"</span>" +
+          (page ? '<span class="rno pageref">'+esc(page)+"</span>" : "") + "</div>" +
+          '<div class="rq">'+esc(it.body)+"</div>" +
+          '<ul class="rchoices">' + it.choices.map(function(c, ci){
+            var isAns = ci === it.answer_index;
+            var isMine = ci === it.chosen_index;
+            var cls = isAns ? " is-answer" : (isMine ? " is-mine" : "");
+            var mark = isAns ? (isMine ? "정답 · 내 답" : "정답") : (isMine ? "내 답" : "");
+            return '<li class="' + cls.trim() + '"><span class="no">' + (ci + 1) + "</span>" +
+              "<span>" + esc(c) + "</span>" +
+              (mark ? '<span class="mark">' + mark + "</span>" : "") + "</li>";
+          }).join("") + "</ul>" +
+          (it.chosen_index === null || it.chosen_index === undefined
+            ? '<div class="line mine"><span>내 답</span>답하지 않음</div>' : "") +
+          '<div class="why">'+esc(it.explanation)+"</div>";
+        rev.appendChild(box);
+      });
+      host.appendChild(rev);
+    }
+
+    // 이 회차의 문항 조합을 그대로 공유
+    if (d.attempt_id) {
+      var shareCard = document.createElement("div"); shareCard.className="card";
+      shareCard.innerHTML = "<h2>이 문제 그대로 공유하기</h2>" +
+        "<p class='sub'>같은 문항 조합을 다른 사람이 풀어볼 수 있는 링크를 만듭니다. 보기 순서만 새로 섞입니다.</p>" +
+        '<div class="rowbtns"><button class="ghost" id="mkShare">공유 링크 만들기</button></div>' +
+        '<p class="notice hide" id="shareMsg"></p>';
+      host.appendChild(shareCard);
+      $("mkShare").addEventListener("click", async function(){
+        var b = this; b.disabled = true; b.textContent = "만드는 중…";
+        try {
+          var r = await rpc("create_share", { p_browser_key: BKEY, p_attempt_id: d.attempt_id });
+          var url = location.origin + location.pathname + "#/s/" + r.token;
+          var m = $("shareMsg"); m.className = "notice"; m.classList.remove("hide");
+          m.innerHTML = '<span style="word-break:break-all">' + esc(url) + "</span>";
+          b.textContent = "링크 복사"; b.disabled = false;
+          b.onclick = function(){ copy(url); };
+        } catch(err){
+          var m2 = $("shareMsg"); m2.className = "notice warn"; m2.classList.remove("hide");
+          m2.textContent = err.message;
+          b.textContent = "공유 링크 만들기"; b.disabled = false;
+        }
+      });
+    }
+
+    var row = document.createElement("div"); row.className="rowbtns";
+    var again = document.createElement("button");
+    again.className="primary"; again.type="button"; again.style.flex="1"; again.style.width="auto";
+    again.textContent="새 문항으로 다시 풀기";
+    again.addEventListener("click", function(){
+      if (state.exam && state.exam.slug) { location.hash = "#/e/" + encodeURIComponent(state.exam.slug); openExam(state.exam.slug); }
+      else { location.hash = ""; }
+    });
+    row.appendChild(again);
+    var back = document.createElement("button");
+    back.className="ghost"; back.type="button"; back.textContent="전체 목록";
+    back.addEventListener("click", function(){ location.hash = ""; });
+    row.appendChild(back);
+    host.appendChild(row);
+  }
+
+  // ── 담당자 화면 ─────────────────────────────────────────
+  $("adminLink").addEventListener("click", function(){ location.hash = "#/admin"; });
+  $("adminBack").addEventListener("click", function(){ location.hash = ""; });
+  $("codeInput").addEventListener("keydown", function(e){ if(e.key==="Enter") openAdmin(); });
+  $("gateBtn").addEventListener("click", openAdmin);
+
+  async function openAdmin(){
+    var pass = $("codeInput").value.trim();
+    var msg = $("gateMsg"); msg.classList.add("hide");
+    try {
+      var who = await rpc("admin_whoami", { p_pass: pass });
+      var exams = await rpc("admin_list_exams", { p_pass: pass });
+      state.adminPass = pass; state.adminRole = who.role; state.adminLabel = who.label || "";
+      if (state.adminRole !== "master" && ["requests","settings","admins"].indexOf(adminTab) >= 0) adminTab = "exams";
+      try { sessionStorage.setItem("ebsq.adminPass", pass); } catch(e){}
+      $("gateCard").classList.add("hide");
+      $("adminBody").classList.remove("hide");
+      renderAdmin(exams, null);
+    } catch(e){
+      msg.classList.remove("hide"); msg.textContent = e.message; $("codeInput").value="";
+    }
+  }
+
+  function logoutAdmin(){
+    state.adminPass = ""; state.adminRole = ""; state.adminLabel = "";
+    try { sessionStorage.removeItem("ebsq.adminPass"); } catch(e){}
+    adminTab = "exams";
+    $("adminBody").classList.add("hide"); $("adminBody").innerHTML = "";
+    $("gateCard").classList.remove("hide");
+    $("codeInput").value = "";
+    var gm = $("gateMsg"); if (gm) gm.classList.add("hide");
+  }
+
+  var adminTab = "exams";
+  var adminExams = [];
+
+  function renderAdmin(exams, editing){
+    if (exams) adminExams = exams;
+    var isMaster = state.adminRole === "master";
+    var ADMIN_TABS = isMaster
+      ? [["exams","시험관리"],["people","응시자"],["scores","점수확인"],["questions","문제관리"],["shares","공유링크"],["requests","요청함"],["admins","담당자"],["settings","설정"]]
+      : [["exams","시험관리"],["people","응시자"],["scores","점수확인"],["questions","문제관리"]];
+    if (!ADMIN_TABS.some(function(t){ return t[0] === adminTab; })) adminTab = "exams";
+    var body = $("adminBody");
+    body.innerHTML = "";
+
+    var topbar = document.createElement("div");
+    topbar.style.cssText = "display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px";
+    var whoTxt = document.createElement("span");
+    whoTxt.style.cssText = "font-size:12.5px;color:var(--muted)";
+    whoTxt.textContent = (isMaster ? "마스터" : "서브") + (state.adminLabel ? " · " + state.adminLabel : "");
+    var lo = document.createElement("button");
+    lo.className = "ghost"; lo.type = "button"; lo.style.cssText = "padding:6px 14px;font-size:12.5px";
+    lo.textContent = "로그아웃";
+    lo.addEventListener("click", logoutAdmin);
+    topbar.appendChild(whoTxt); topbar.appendChild(lo);
+    body.appendChild(topbar);
+
+    if (!isMaster) {
+      var badge = document.createElement("p");
+      badge.className = "sub"; badge.style.margin = "0 0 10px";
+      badge.textContent = "서브 담당자" + (state.adminLabel ? " · " + state.adminLabel : "") + " — 본인이 만든 시험만 보입니다.";
+      body.appendChild(badge);
+    }
+
+    var tabs = document.createElement("div");
+    tabs.className = "tabs";
+    ADMIN_TABS.forEach(function(t){
+      var b = document.createElement("button");
+      b.className = "tab"; b.type = "button"; b.textContent = t[1];
+      b.setAttribute("aria-pressed", adminTab === t[0] ? "true" : "false");
+      b.addEventListener("click", function(){ adminTab = t[0]; renderAdmin(null, null); });
+      tabs.appendChild(b);
+    });
+    body.appendChild(tabs);
+
+    var panel = document.createElement("div");
+    panel.id = "adminPanel";
+    body.appendChild(panel);
+
+    if (adminTab === "exams")     paneExams(panel, editing);
+    if (adminTab === "people")    panePeople(panel);
+    if (adminTab === "scores")    paneScores(panel);
+    if (adminTab === "questions") paneQuestions(panel);
+    if (adminTab === "shares")    paneShares(panel);
+    if (adminTab === "requests")  paneRequests(panel);
+    if (adminTab === "admins")    paneAdmins(panel);
+    if (adminTab === "settings")  paneSettings(panel);
+  }
+
+  // ── 탭 1: 시험관리 ─────────────────────────────────────
+  function paneExams(panel, editing){
+    var exams = adminExams;
+    var listCard = document.createElement("div"); listCard.className="card";
+    listCard.innerHTML = "<h2>기존 시험 관리</h2><p class='sub'>↑ ↓ 로 순서를 바꾸면 메인 목록에도 그대로 반영됩니다.</p>";
+    var newBtn = document.createElement("button");
+    newBtn.className = "primary"; newBtn.type = "button";
+    newBtn.style.cssText = "width:auto;padding:10px 18px;margin-bottom:16px;font-size:14px";
+    newBtn.textContent = "+ 새 시험 만들기";
+    newBtn.addEventListener("click", function(){ examModal(null); });
+    listCard.appendChild(newBtn);
+    exams.forEach(function(e, idx){
+      var d = document.createElement("div");
+      d.style.cssText = "border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px";
+      d.innerHTML =
+        '<div style="font-size:15.5px;font-weight:700;margin-bottom:4px">' + esc(e.title) +
+        (e.access_mode === "code" ? '<span class="chip">응시코드</span>' : "") +
+        (e.has_password ? '<span class="chip">비밀번호</span>' : "") +
+        (e.section_scope === "mentor" ? '<span class="chip">멘토편</span>' : e.section_scope === "mentee" ? '<span class="chip">멘티편</span>' : "") +
+        ((e.mentor_types && e.mentor_types.length) ? '<span class="chip">'+esc(e.mentor_types.join("·"))+'</span>'
+          : (e.section_scope === "mentor" && e.ask_mentor_type ? '<span class="chip">유형 응시자 선택</span>' : "")) +
+        (e.feedback_mode === "instant" ? '<span class="chip">즉시 채점</span>' : "") +
+        (e.show_rank && e.show_score ? '<span class="chip">랭킹</span>' : "") +
+        (e.listed ? "" : '<span class="chip gray">숨김</span>') +
+        (e.show_score ? "" : '<span class="chip gray">점수 비공개</span>') +
+        (state.adminRole === "master" && e.owner_label ? '<span class="chip gray">' + esc(e.owner_label) + '</span>' : "") + "</div>" +
+        '<div style="font-size:12.5px;color:var(--muted);margin-bottom:10px;word-break:break-all">' +
+        esc(composition(e)) + " · 제출 " + e.attempt_count + "건 · " + esc(examUrl(e.slug)) + "</div>";
+      var row = document.createElement("div"); row.className="rowbtns";
+      if (state.adminRole === "master") {
+        var up = document.createElement("button");
+        up.className="ghost"; up.type="button"; up.style.cssText="padding:8px 11px;font-size:13px";
+        up.textContent="↑"; up.title="위로"; up.disabled = idx === 0;
+        up.addEventListener("click", function(){ moveExam(idx, -1); });
+        row.appendChild(up);
+        var down = document.createElement("button");
+        down.className="ghost"; down.type="button"; down.style.cssText="padding:8px 11px;font-size:13px";
+        down.textContent="↓"; down.title="아래로"; down.disabled = idx === exams.length - 1;
+        down.addEventListener("click", function(){ moveExam(idx, 1); });
+        row.appendChild(down);
+      }
+      [["링크 복사", function(){ copy(examUrl(e.slug)); }],
+       ["결과 보기", function(){ adminTab="scores"; renderAdmin(null,null); loadAdminResults(e.slug, e.title); }],
+       ["수정", function(){ examModal(e); }]].forEach(function(pair){
+        var b=document.createElement("button"); b.className="ghost"; b.type="button";
+        b.style.cssText="padding:8px 12px;font-size:13px"; b.textContent=pair[0];
+        b.addEventListener("click", pair[1]); row.appendChild(b);
+      });
+      if (state.adminRole === "master") {
+        var asn = document.createElement("button");
+        asn.className="ghost"; asn.type="button"; asn.style.cssText="padding:8px 12px;font-size:13px";
+        asn.textContent="담당자";
+        asn.addEventListener("click", function(){ assignExamModal(e); });
+        row.appendChild(asn);
+        var del = document.createElement("button");
+        del.className="danger"; del.type="button"; del.style.cssText="padding:8px 12px;font-size:13px";
+        del.textContent="삭제";
+        del.addEventListener("click", async function(){
+          if(!confirm("["+e.title+"] 시험과 응시 기록을 삭제할까요? 되돌릴 수 없습니다.")) return;
+          try { await rpc("admin_delete_exam", { p_pass: state.adminPass, p_id: e.id }); reloadAdmin(); }
+          catch(err){ alert(err.message); }
+        });
+        row.appendChild(del);
+      } else {
+        var dreq = document.createElement("button");
+        dreq.className = "ghost"; dreq.type = "button"; dreq.style.cssText = "padding:8px 12px;font-size:13px";
+        dreq.textContent = "삭제 요청";
+        dreq.addEventListener("click", async function(){
+          if (!confirm("[" + e.title + "] 삭제를 마스터에게 요청할까요?")) return;
+          dreq.disabled = true;
+          try { await rpc("submit_exam_delete", { p_pass: state.adminPass, p_exam_id: e.id }); dreq.textContent = "요청됨"; }
+          catch(err){ alert(err.message); dreq.disabled = false; }
+        });
+        row.appendChild(dreq);
+      }
+      d.appendChild(row); listCard.appendChild(d);
+    });
+    if (!exams.length) {
+      var emptyP = document.createElement("p");
+      emptyP.className = "empty"; emptyP.textContent = "아직 만든 시험이 없습니다.";
+      listCard.appendChild(emptyP);
+    }
+    panel.appendChild(listCard);
+  }
+
+  // ── 모달 공통 ──
+  function closeModal(){ var ov=$("modalOverlay"); if(ov) ov.remove(); document.removeEventListener("keydown", modalEsc); }
+  function modalEsc(ev){ if(ev.key==="Escape") closeModal(); }
+  function openModal(node){
+    closeModal();
+    var ov=document.createElement("div"); ov.className="modal-overlay"; ov.id="modalOverlay";
+    var box=document.createElement("div"); box.className="modal-box"; box.appendChild(node);
+    ov.appendChild(box);
+    ov.addEventListener("click", function(ev){ if(ev.target===ov) closeModal(); });
+    document.addEventListener("keydown", modalEsc);
+    document.body.appendChild(ov);
+  }
+
+  // 시험 생성/수정 모달
+  function examModal(editing){
+    var e0 = editing || { mode:"level", easy_count:5, mid_count:5, hard_count:5, random_count:15, listed:true, show_score:true, section_scope:"both", mentor_types:[], feedback_mode:"end", show_rank:false, ask_mentor_type:true };
+    var mt = e0.mentor_types || [];
+    var askType = (e0.ask_mentor_type === undefined) ? true : !!e0.ask_mentor_type;
+    var form = document.createElement("div"); form.className="card";
+    form.innerHTML =
+      "<h2>" + (editing ? "시험 수정" : "새 시험 만들기") + "</h2>" +
+      "<p class='sub'>난이도별 문항 수에 0을 넣으면 그 난이도는 출제되지 않습니다.</p>" +
+      '<label class="field"><span class="lab">시험 이름</span><input type="text" id="fTitle" placeholder="예: 중간고사" value="'+esc(e0.title||"")+'"></label>' +
+      '<label class="field"><span class="lab">링크 주소 <span class="tiny">영문·숫자 권장</span></span><input type="text" id="fSlug" placeholder="예: midterm" value="'+esc(e0.slug||"")+'"></label>' +
+      '<label class="field"><span class="lab">설명 <span class="tiny">선택</span></span><input type="text" id="fDesc" value="'+esc(e0.description||"")+'"></label>' +
+      '<label class="field"><span class="lab">출제 방식</span><select id="fMode">' +
+        '<option value="level"'+(e0.mode==="level"?" selected":"")+'>난이도별 지정</option>' +
+        '<option value="random"'+(e0.mode==="random"?" selected":"")+'>난이도 무관 무작위</option>' +
+      "</select></label>" +
+      '<div class="field" id="fLevelBox"><span class="lab">난이도별 문항 수</span><div class="grid3">' +
+        '<input type="number" id="fEasy" min="0" value="'+(e0.easy_count||0)+'">' +
+        '<input type="number" id="fMid" min="0" value="'+(e0.mid_count||0)+'">' +
+        '<input type="number" id="fHard" min="0" value="'+(e0.hard_count||0)+'">' +
+      '</div><p class="notice">왼쪽부터 초급 · 중급 · 고급입니다.</p></div>' +
+      '<label class="field hide" id="fRandomBox"><span class="lab">무작위 문항 수</span>' +
+        '<input type="number" id="fRandom" min="1" value="'+(e0.random_count||15)+'"></label>' +
+      '<label class="field"><span class="lab">출제 대상 <span class="tiny">통합(공통 규정) 문항은 항상 포함</span></span><select id="fSection">' +
+        '<option value="both"'+((!e0.section_scope||e0.section_scope==="both")?" selected":"")+'>같이 — 멘토편 · 멘티편 · 통합 모두 섞어서</option>' +
+        '<option value="mentor"'+(e0.section_scope==="mentor"?" selected":"")+'>멘토편 — 멘토편 + 통합</option>' +
+        '<option value="mentee"'+(e0.section_scope==="mentee"?" selected":"")+'>멘티편 — 멘티편 + 통합</option>' +
+      "</select></label>" +
+      '<div class="field hide" id="fMentorTypeBox"><span class="lab">멘토 유형 <span class="tiny">멘토편일 때 · 여러 개 선택 가능 · 안 고르면 전체</span></span>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:8px 16px;padding-top:2px">' +
+        ['일반대학생','근로장학생','봉사활동','교사'].map(function(t){
+          var on = mt.indexOf(t) >= 0;
+          return '<label class="checkline" style="margin:0;font-weight:400"><input type="checkbox" class="fMentorType" value="'+t+'"'+(on?" checked":"")+"> "+t+"</label>";
+        }).join("") +
+        "</div>" +
+        '<label class="checkline" id="fAskTypeLine"><input type="checkbox" id="fAskType"'+(askType?" checked":"")+
+        '> 유형을 안 고르면 응시자가 직접 유형을 선택 <span class="tiny">끄면 유형 구분 없이 멘토편 전체에서 출제</span></label>' +
+        "</div>" +
+      '<label class="field"><span class="lab">접근 방식</span><select id="fAccess">' +
+        '<option value="public"'+((!e0.access_mode||e0.access_mode==="public")?" selected":"")+'>공개 — 이름만 입력하면 응시</option>' +
+        '<option value="code"'+(e0.access_mode==="code"?" selected":"")+'>응시코드 — 명부에 등록된 사람만 응시</option>' +
+      "</select></label>" +
+      '<label class="field" id="fPwBox"><span class="lab">접근 비밀번호 <span class="tiny">'+(editing?"비워 두면 기존 설정 유지":"비워 두면 비밀번호 없음")+'</span></span>' +
+        '<input type="password" id="fPw" autocomplete="new-password"></label>' +
+      (editing && e0.has_password ? '<label class="checkline"><input type="checkbox" id="fPwClear"> 비밀번호 해제</label>' : "") +
+      '<label class="field"><span class="lab">채점 방식</span><select id="fFeedback">' +
+        '<option value="end"'+(e0.feedback_mode!=="instant"?" selected":"")+'>제출 후 일괄 — 다 풀고 제출하면 한 번에 채점</option>' +
+        '<option value="instant"'+(e0.feedback_mode==="instant"?" selected":"")+'>문항마다 즉시 — 고르는 즉시 정답·해설 표시</option>' +
+      "</select>" +
+      '<p class="notice" id="fFeedbackNote">즉시 채점은 고른 답을 바꿀 수 없습니다. 평가용 시험에는 권장하지 않습니다.</p></label>' +
+      '<label class="checkline"><input type="checkbox" id="fListed"'+(e0.listed?" checked":"")+'> 메인 목록에 표시 (끄면 링크를 아는 사람만 응시)</label>' +
+      '<label class="checkline"><input type="checkbox" id="fScore"'+(e0.show_score?" checked":"")+'> 응시자에게 점수와 정답 공개</label>' +
+      '<label class="checkline"><input type="checkbox" id="fRank"'+(e0.show_rank?" checked":"")+
+      '> 랭킹보드 공개 <span class="tiny">사람당 최고점 1건 · 상위 20명 · 입력한 이름 그대로 표시</span></label>' +
+      '<div class="rowbtns" style="margin-top:14px">' +
+        '<button class="primary" id="fSave" style="width:auto;flex:1">' + (editing ? "저장" : "만들기") + "</button>" +
+        '<button class="ghost" id="fCancel">취소</button>' +
+      "</div><p class='notice hide warn' id='fMsg'></p>";
+    openModal(form);
+
+    function syncMode(){
+      var m = $("fMode").value;
+      $("fLevelBox").classList.toggle("hide", m !== "level");
+      $("fRandomBox").classList.toggle("hide", m !== "random");
+    }
+    $("fMode").addEventListener("change", syncMode); syncMode();
+    function syncSection(){ $("fMentorTypeBox").classList.toggle("hide", $("fSection").value !== "mentor"); }
+    $("fSection").addEventListener("change", syncSection); syncSection();
+    function syncAccess(){ $("fPwBox").classList.toggle("hide", $("fAccess").value === "code"); }
+    $("fAccess").addEventListener("change", syncAccess); syncAccess();
+    // 점수를 감추면 즉시 채점도 랭킹도 의미가 없다. 서버에서도 같은 규칙으로 막는다.
+    function syncScore(){
+      var on = $("fScore").checked;
+      $("fFeedback").disabled = !on;
+      $("fRank").disabled = !on;
+      if (!on) { $("fFeedback").value = "end"; $("fRank").checked = false; }
+      $("fFeedbackNote").textContent = on
+        ? "즉시 채점은 고른 답을 바꿀 수 없습니다. 평가용 시험에는 권장하지 않습니다."
+        : "점수와 정답을 감추는 시험은 즉시 채점과 랭킹보드를 쓸 수 없습니다.";
+    }
+    $("fScore").addEventListener("change", syncScore); syncScore();
+    $("fCancel").addEventListener("click", closeModal);
+
+    $("fSave").addEventListener("click", async function(){
+      var pwVal = $("fPw").value;
+      var clear = $("fPwClear") && $("fPwClear").checked;
+      var mtypes = Array.prototype.map.call(document.querySelectorAll("#fMentorTypeBox .fMentorType:checked"), function(i){ return i.value; });
+      var btn = this; btn.disabled = true;
+      try {
+        await rpc("admin_save_exam", {
+          p_pass: state.adminPass, p_id: editing ? editing.id : null,
+          p_slug: $("fSlug").value.trim(), p_title: $("fTitle").value.trim(),
+          p_description: $("fDesc").value.trim(), p_mode: $("fMode").value,
+          p_easy_count: Number($("fEasy").value||0), p_mid_count: Number($("fMid").value||0),
+          p_hard_count: Number($("fHard").value||0), p_random_count: Number($("fRandom").value||0),
+          p_password: clear ? "" : (pwVal ? pwVal : (editing ? null : "")),
+          p_listed: $("fListed").checked, p_show_score: $("fScore").checked, p_active: true,
+          p_access_mode: $("fAccess").value, p_section_scope: $("fSection").value,
+          p_mentor_types: ($("fSection").value === "mentor" ? mtypes : null),
+          p_feedback_mode: $("fFeedback").value,
+          p_show_rank: $("fRank").checked,
+          p_ask_mentor_type: $("fAskType").checked
+        });
+        closeModal(); reloadAdmin();
+      } catch(err){ btn.disabled = false; var m=$("fMsg"); m.classList.remove("hide"); m.textContent=err.message; }
+    });
+  }
+
+  // 시험 담당자(소유자) 지정 — 마스터 전용
+  function assignExamModal(exam){
+    var box = document.createElement("div"); box.className="card";
+    box.innerHTML =
+      "<h2>담당자 지정</h2>" +
+      "<p class='sub'>" + esc(exam.title) + " 의 담당 서브를 지정합니다. 서브는 본인이 담당한 시험만 볼 수 있습니다.</p>" +
+      '<label class="field"><span class="lab">담당자</span>' +
+      '<select id="asnSel" style="padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)"><option value="">불러오는 중…</option></select></label>' +
+      '<p class="notice hide warn" id="asnMsg"></p>' +
+      '<div class="rowbtns" style="margin-top:14px"><button class="primary" id="asnSave" type="button" style="width:auto">지정</button>' +
+      '<button class="ghost" id="asnCancel" type="button" style="width:auto">취소</button></div>';
+    openModal(box);
+    $("asnCancel").addEventListener("click", closeModal);
+    rpc("admin_list_admins", { p_pass: state.adminPass }).then(function(list){
+      var opts = '<option value="">마스터 / 미지정</option>';
+      list.forEach(function(a){
+        if (a.role === "master") return;
+        opts += '<option value="' + esc(a.id) + '"' + (exam.created_by === a.id ? " selected" : "") + ">" + esc(a.label || "서브") + " (" + esc(a.code) + ")</option>";
+      });
+      $("asnSel").innerHTML = opts;
+      $("asnSel").value = exam.created_by || "";
+    }).catch(function(e){ var m=$("asnMsg"); m.classList.remove("hide"); m.textContent = e.message; });
+    $("asnSave").addEventListener("click", function(){
+      var owner = $("asnSel").value || null;
+      rpc("admin_assign_exam", { p_pass: state.adminPass, p_exam_id: exam.id, p_owner_id: owner })
+        .then(function(){ closeModal(); reloadAdmin(); })
+        .catch(function(e){ var m=$("asnMsg"); m.classList.remove("hide"); m.textContent = e.message; });
+    });
+  }
+
+  async function moveExam(idx, dir){
+    var list = adminExams.slice();
+    var to = idx + dir;
+    if (to < 0 || to >= list.length) return;
+    var tmp = list[idx]; list[idx] = list[to]; list[to] = tmp;
+    adminExams = list;
+    renderAdmin(null, null);
+    try {
+      await rpc("admin_reorder_exams", {
+        p_pass: state.adminPass,
+        p_ids: list.map(function(e){ return e.id; })
+      });
+    } catch(err){ alert(err.message); reloadAdmin(); }
+  }
+
+  // ── 탭: 응시자 ─────────────────────────────────────────
+  var pState = { people: [], examId: "", prefix: "", digits: 4, mode: "random", start: 1, overwrite: false };
+
+  async function panePeople(panel){
+    var exams = adminExams;
+
+    // 1) 명부 추가
+    var addCard = document.createElement("div"); addCard.className = "card";
+    addCard.innerHTML = "<h2>응시자 등록</h2><p class='sub'>한 줄에 한 명씩 이름을 넣으세요. 여러 명을 한 번에 등록할 수 있습니다.</p>" +
+      '<label class="field"><span class="lab">이름 목록</span><textarea id="pNames" rows="3" placeholder="홍길동&#10;김멘토&#10;이멘티"></textarea></label>' +
+      '<label class="field"><span class="lab">메모 <span class="tiny">선택 · 소속이나 기수 등</span></span><input type="text" id="pNote" placeholder="예: 2026-1기"></label>' +
+      '<div class="rowbtns"><button class="primary" id="pAdd" style="width:auto;padding:11px 18px">등록</button></div>' +
+      '<p class="notice hide" id="pMsg"></p>';
+    panel.appendChild(addCard);
+    $("pAdd").addEventListener("click", async function(){
+      var names = $("pNames").value.split("\n").map(function(x){ return x.trim(); }).filter(Boolean);
+      if (!names.length) return;
+      try {
+        var r = await rpc("admin_add_participants", { p_pass: state.adminPass, p_names: names, p_note: $("pNote").value.trim() });
+        $("pNames").value = "";
+        var m = $("pMsg"); m.className = "notice"; m.classList.remove("hide"); m.textContent = r.added + "명을 등록했습니다.";
+        loadPeople();
+      } catch(err){ var m2=$("pMsg"); m2.className="notice warn"; m2.classList.remove("hide"); m2.textContent=err.message; }
+    });
+
+    // 2) 코드 발급
+    var issue = document.createElement("div"); issue.className = "card";
+    issue.innerHTML = "<h2>응시코드 발급</h2><p class='sub'>선택한 시험에 대해 명부 전체 또는 일부에게 코드를 만듭니다.</p>" +
+      '<label class="field"><span class="lab">대상 시험</span><select id="iExam">' +
+        exams.map(function(e){ return '<option value="'+esc(e.id)+'">'+esc(e.title)+(e.access_mode==="code"?"":" (공개 시험)")+"</option>"; }).join("") +
+      "</select></label>" +
+      '<div class="qgrid">' +
+        '<label class="field"><span class="lab">접두어 <span class="tiny">영문·숫자</span></span><input type="text" id="iPrefix" placeholder="예: EBS" maxlength="6"></label>' +
+        '<label class="field"><span class="lab">숫자 자릿수</span><input type="number" id="iDigits" min="2" max="8" value="4"></label>' +
+        '<label class="field"><span class="lab">번호 방식</span><select id="iMode">' +
+          '<option value="random">무작위</option><option value="seq">순차</option></select></label>' +
+      "</div>" +
+      '<label class="field hide" id="iStartBox"><span class="lab">순차 시작 번호</span><input type="number" id="iStart" min="0" value="1"></label>' +
+      '<label class="checkline"><input type="checkbox" id="iOverwrite"> 이미 코드가 있어도 새로 발급 (기존 코드는 무효)</label>' +
+      '<label class="checkline"><input type="checkbox" id="iSelected"> 아래 목록에서 체크한 사람에게만 발급</label>' +
+      '<div class="rowbtns"><button class="primary" id="iRun" style="width:auto;padding:11px 18px">발급</button>' +
+      '<button class="ghost" id="iCopy">코드 목록 복사</button></div>' +
+      '<p class="notice hide" id="iMsg"></p>';
+    panel.appendChild(issue);
+
+    if (!exams.length) issue.innerHTML = "<h2>응시코드 발급</h2><p class='empty'>먼저 시험을 만들어 주세요.</p>";
+    else {
+      $("iMode").addEventListener("change", function(){
+        $("iStartBox").classList.toggle("hide", $("iMode").value !== "seq");
+      });
+      $("iRun").addEventListener("click", async function(){
+        var ids = null;
+        if ($("iSelected").checked) {
+          ids = Array.prototype.map.call(document.querySelectorAll(".p-check:checked"), function(c){ return c.dataset.id; });
+          if (!ids.length) { flash("iMsg", "체크한 응시자가 없습니다.", true); return; }
+        }
+        try {
+          var r = await rpc("admin_issue_codes", {
+            p_pass: state.adminPass, p_exam_id: $("iExam").value,
+            p_participant_ids: ids, p_prefix: $("iPrefix").value.trim(),
+            p_digits: Number($("iDigits").value || 4), p_mode: $("iMode").value,
+            p_start: Number($("iStart").value || 1), p_overwrite: $("iOverwrite").checked
+          });
+          flash("iMsg", r.issued + "개 발급" + (r.skipped ? " · 이미 있어 건너뜀 " + r.skipped + "개" : ""), false);
+          loadPeople();
+        } catch(err){ flash("iMsg", err.message, true); }
+      });
+      $("iCopy").addEventListener("click", function(){
+        var slug = (exams.filter(function(e){ return e.id === $("iExam").value; })[0] || {}).slug;
+        var lines = [];
+        pState.people.forEach(function(p){
+          (p.codes || []).forEach(function(c){
+            if (!slug || c.exam_slug === slug) lines.push(p.name + "\t" + c.code + "\t" + examUrl(c.exam_slug));
+          });
+        });
+        if (!lines.length) { flash("iMsg", "복사할 코드가 없습니다.", true); return; }
+        copy(lines.join("\n"));
+      });
+    }
+
+    // 3) 명부 목록
+    var listCard = document.createElement("div"); listCard.className = "card";
+    listCard.innerHTML = "<h2>응시자 명부</h2><p class='sub' id='pCount'>불러오는 중…</p><div id='pList'></div>";
+    panel.appendChild(listCard);
+    loadPeople();
+  }
+
+  function flash(id, text, isWarn){
+    var m = $(id); if (!m) return;
+    m.className = "notice" + (isWarn ? " warn" : "");
+    m.classList.remove("hide"); m.textContent = text;
+  }
+
+  async function loadPeople(){
+    var box = $("pList"); if (!box) return;
+    box.innerHTML = '<p class="empty">불러오는 중…</p>';
+    try {
+      var list = await rpc("admin_list_participants", { p_pass: state.adminPass, p_exam_slug: null });
+      pState.people = list;
+      $("pCount").textContent = list.length ? "총 " + list.length + "명" : "";
+      if (!list.length) { box.innerHTML = '<p class="empty">등록된 응시자가 없습니다.</p>'; return; }
+      box.innerHTML = "";
+      list.forEach(function(p){
+        var el = document.createElement("div");
+        el.className = "qrow" + (p.active ? "" : " off");
+        var codes = (p.codes || []).map(function(c){
+          return '<tr><td>' + esc(c.exam_title) + "</td>" +
+            '<td><b style="font-family:var(--mono)">' + esc(c.code) + "</b>" + (c.active ? "" : " (사용중지)") + "</td>" +
+            '<td class="num">' + (c.attempts || 0) + "회</td>" +
+            '<td class="num">' + (c.last_score == null ? "-" : c.last_score + "/" + c.total) + "</td>" +
+            '<td><button class="ghost c-del" data-id="' + c.id + '" style="padding:4px 8px;font-size:11px">삭제</button></td></tr>';
+        }).join("");
+        el.innerHTML =
+          '<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">' +
+          '<input type="checkbox" class="p-check" data-id="' + p.id + '">' +
+          '<span class="txt" style="margin:0">' + esc(p.name) + "</span>" +
+          (p.note ? '<span class="meta" style="margin:0">' + esc(p.note) + "</span>" : "") + "</div>" +
+          (codes ? '<div class="scroll"><table><thead><tr><th>시험</th><th>응시코드</th><th class="num">응시</th><th class="num">최근 점수</th><th></th></tr></thead><tbody>' + codes + "</tbody></table></div>"
+                 : '<div class="meta">발급된 코드가 없습니다.</div>');
+        var row = document.createElement("div"); row.className = "rowbtns qbtns";
+        if (state.adminRole === "master") {
+          add(row, "danger", "응시자 삭제", async function(){
+            if (!confirm(p.name + " 님을 명부에서 삭제할까요? 발급된 코드도 함께 사라집니다.")) return;
+            try { await rpc("admin_delete_participant", { p_pass: state.adminPass, p_id: p.id }); loadPeople(); }
+            catch(err){ alert(err.message); }
+          });
+        }
+        el.appendChild(row);
+        box.appendChild(el);
+        Array.prototype.forEach.call(el.querySelectorAll(".c-del"), function(b){
+          b.addEventListener("click", async function(){
+            try { await rpc("admin_delete_code", { p_pass: state.adminPass, p_id: b.dataset.id }); loadPeople(); }
+            catch(err){ alert(err.message); }
+          });
+        });
+      });
+    } catch(e){ box.innerHTML = '<p class="empty">' + esc(e.message) + "</p>"; }
+  }
+
+  // ── 탭 2: 점수확인 ─────────────────────────────────────
+  function paneScores(panel){
+    var exams = adminExams;
+    var sum = document.createElement("div"); sum.className="card";
+    var rows = exams.map(function(e){
+      return "<tr><td>" + esc(e.title) +
+        (e.listed ? "" : '<span class="chip gray">숨김</span>') + "</td>" +
+        "<td>" + esc(composition(e)) + "</td>" +
+        '<td class="num" style="vertical-align:top">' + e.taker_count +
+          '<div style="font-size:11px;color:var(--muted);font-weight:400;margin-top:2px;text-align:right;white-space:nowrap">(총 ' + e.attempt_count + '회)</div></td>' +
+        '<td class="num">' + e.attempt_count + (e.in_progress ? " (+" + e.in_progress + ")" : "") + "</td>" +
+        '<td class="num">' + (e.avg_score == null ? "-" : e.avg_score + " / " + e.total) + "</td>" +
+        '<td class="num">' + (e.max_score == null ? "-" : e.min_score + " ~ " + e.max_score) + "</td>" +
+        "<td>" + fmt(e.last_at) + "</td>" +
+        (state.adminRole === "master"
+          ? '<td><button class="danger rst" data-slug="' + esc(e.slug) + '" data-title="' + esc(e.title) +
+            '" style="padding:6px 10px;font-size:12px;white-space:nowrap"' +
+            (e.attempt_count || e.in_progress ? "" : " disabled") + ">초기화</button></td>"
+          : "<td></td>") + "</tr>";
+    }).join("");
+    sum.innerHTML = "<h2>시험별 점수 현황</h2><p class='sub'>응시 인원은 같은 사람의 중복 응시를 1명으로 세며, 아래 괄호는 제출 기준 총 응시 횟수입니다. 제출 건수 옆 괄호는 진행 중인 회차입니다. 초기화는 해당 시험의 점수와 응시 기록만 지웁니다.</p>" +
+      (rows ? '<div class="scroll"><table><thead><tr><th>시험</th><th>구성</th><th class="num">응시 인원</th>' +
+              '<th class="num">제출</th><th class="num">평균</th><th class="num">최저~최고</th><th>최근 제출</th><th></th></tr></thead><tbody>' +
+              rows + "</tbody></table></div>" : '<p class="empty">아직 만든 시험이 없습니다.</p>');
+    panel.appendChild(sum);
+
+    Array.prototype.forEach.call(sum.querySelectorAll("button.rst"), function(b){
+      b.addEventListener("click", async function(){
+        var slug = b.dataset.slug, title = b.dataset.title;
+        if (!confirm("[" + title + "] 시험의 점수와 응시 기록을 모두 지울까요?\n되돌릴 수 없습니다.")) return;
+        b.disabled = true; b.textContent = "처리 중…";
+        try { await rpc("admin_reset", { p_pass: state.adminPass, p_exam_slug: slug }); reloadAdmin(); }
+        catch(err){ alert(err.message); b.disabled = false; b.textContent = "초기화"; }
+      });
+    });
+
+    var pick = document.createElement("div"); pick.className="card";
+    pick.innerHTML = "<h2>응시자별 결과</h2><p class='sub'>시험을 선택하면 응시자별 점수와 많이 틀린 문항을 볼 수 있습니다.</p>";
+    var sel = document.createElement("select");
+    sel.innerHTML = '<option value="">전체 시험</option>' +
+      exams.map(function(e){ return '<option value="'+esc(e.slug)+'">'+esc(e.title)+"</option>"; }).join("");
+    sel.addEventListener("change", function(){
+      var e = exams.filter(function(x){ return x.slug === sel.value; })[0];
+      loadAdminResults(sel.value || null, e ? e.title : "전체");
+    });
+    pick.appendChild(sel); panel.appendChild(pick);
+    var box = document.createElement("div"); box.id="adminResults"; panel.appendChild(box);
+    loadAdminResults(null, "전체");
+  }
+
+  // ── 탭 3: 문제관리 ─────────────────────────────────────
+  var qState = { level:"", search:"", offset:0, limit:20, editing:null };
+
+  function paneQuestions(panel){
+    var filter = document.createElement("div"); filter.className="card";
+    filter.innerHTML = "<h2>문제 은행</h2><p class='sub' id='qCount'>불러오는 중…</p>" +
+      (state.adminRole !== "master" ? "<p class='notice'>서브 담당자는 직접 수정할 수 없습니다. 문항의 <b>수정 요청</b>을 누르면 마스터 승인 후 반영됩니다.</p>" : "") +
+      '<div class="rowbtns" style="margin-bottom:10px">' +
+      '<select id="qLevel" style="flex:0 0 130px"><option value="">난이도 전체</option>' +
+      '<option value="초급">초급</option><option value="중급">중급</option><option value="고급">고급</option></select>' +
+      '<input type="text" id="qSearch" placeholder="문항·해설·UID 검색" style="flex:1;min-width:160px">' +
+      '<button class="ghost" id="qFind">검색</button>' +
+      (state.adminRole === "master" ? '<button class="primary" id="qNew" style="width:auto;padding:11px 16px">새 문항</button>' : "") + "</div>" +
+      '<div id="qList"></div><div class="pager"><button class="ghost" id="qPrev" style="padding:8px 12px">이전</button>' +
+      '<span id="qPage"></span><button class="ghost" id="qNext" style="padding:8px 12px">다음</button></div>';
+    panel.appendChild(filter);
+
+    $("qLevel").value = qState.level;
+    $("qSearch").value = qState.search;
+    $("qFind").addEventListener("click", function(){
+      qState.level = $("qLevel").value; qState.search = $("qSearch").value.trim(); qState.offset = 0; loadQuestions();
+    });
+    $("qSearch").addEventListener("keydown", function(e){ if(e.key==="Enter") $("qFind").click(); });
+    if ($("qNew")) $("qNew").addEventListener("click", function(){
+      var host = $("qList");
+      if (host.querySelector(".qedit")) return;
+      var el = document.createElement("div"); el.className = "qrow";
+      el.appendChild(qEditor(null, null, function(){ el.remove(); }));
+      host.insertBefore(el, host.firstChild);
+      el.scrollIntoView({ behavior:"smooth", block:"center" });
+    });
+    $("qPrev").addEventListener("click", function(){ qState.offset = Math.max(0, qState.offset - qState.limit); loadQuestions(); });
+    $("qNext").addEventListener("click", function(){ qState.offset += qState.limit; loadQuestions(); });
+    loadQuestions();
+  }
+
+  async function loadQuestions(){
+    var box = $("qList"); if(!box) return;
+    box.innerHTML = '<p class="empty">불러오는 중…</p>';
+    try {
+      var d = await rpc("admin_list_questions", {
+        p_pass: state.adminPass, p_level: qState.level || null,
+        p_search: qState.search || null, p_limit: qState.limit, p_offset: qState.offset
+      });
+      $("qCount").textContent = "전체 " + d.total + "문항";
+      $("qPage").textContent = d.total ? (qState.offset + 1) + " ~ " + Math.min(qState.offset + qState.limit, d.total) + " / " + d.total : "0";
+      $("qPrev").disabled = qState.offset <= 0;
+      $("qNext").disabled = qState.offset + qState.limit >= d.total;
+      if (!d.items.length) { box.innerHTML = '<p class="empty">해당하는 문항이 없습니다.</p>'; return; }
+      box.innerHTML = "";
+      d.items.forEach(function(q){ box.appendChild(qRow(q)); });
+    } catch(e){ box.innerHTML = '<p class="empty">'+esc(e.message)+"</p>"; }
+  }
+
+  // 한 문항 = 보기 방식 / 수정 방식 두 상태를 같은 자리에서 전환
+  function qRow(q){
+    var el = document.createElement("div");
+    el.className = "qrow" + (q.active ? "" : " off");
+    view();
+    return el;
+
+    function meta(){
+      return '<div class="meta">' + esc(q.uid) + " · " + esc(q.level) + " · " + esc(q.section) +
+        (q.section === "멘토편" && q.mentor_types && q.mentor_types.length < 4 ? " · 유형: " + esc(q.mentor_types.join("·")) : "") +
+        (q.source_guide ? " · " + esc(q.source_guide + " " + q.source_page + "쪽") : "") +
+        " · 출제 " + q.used + "회" + (q.active ? "" : " · 비활성") + "</div>";
+    }
+
+    function view(){
+      el.innerHTML = meta() + '<div class="txt">' + esc(q.body) + "</div>" +
+        '<ol class="qchoices">' + q.choices.map(function(c, i){
+          return "<li" + (i === q.answer_index ? ' class="correct"' : "") + ">" + esc(c) + "</li>";
+        }).join("") + "</ol>" +
+        '<div class="qwhy">' + esc(q.explanation) + "</div>";
+      var row = document.createElement("div"); row.className = "rowbtns qbtns";
+      add(row, "ghost", state.adminRole === "master" ? "수정" : "수정 요청", edit);
+      if (state.adminRole === "master") {
+        add(row, "ghost", q.active ? "비활성화" : "활성화", async function(){
+          try {
+            await rpc("admin_toggle_question", { p_pass: state.adminPass, p_id: q.id, p_active: !q.active });
+            q.active = !q.active; el.className = "qrow" + (q.active ? "" : " off"); view();
+          } catch(err){ alert(err.message); }
+        });
+        add(row, "danger", "삭제", async function(){
+          if (!confirm(q.uid + " 문항을 삭제할까요?")) return;
+          try { await rpc("admin_delete_question", { p_pass: state.adminPass, p_id: q.id }); loadQuestions(); }
+          catch(err){ alert(err.message); }
+        });
+      }
+      el.appendChild(row);
+    }
+
+    function edit(){
+      el.innerHTML = "";
+      el.appendChild(qEditor(q, function(saved){
+        // 저장 후 그 자리에서 바로 보기 방식으로 복귀
+        Object.keys(saved).forEach(function(k){ q[k] = saved[k]; });
+        el.className = "qrow" + (q.active ? "" : " off");
+        view();
+      }, function(){ view(); }));
+    }
+  }
+
+  function add(row, cls, label, fn){
+    var b = document.createElement("button");
+    b.className = cls; b.type = "button";
+    b.style.cssText = "padding:5px 10px;font-size:11.5px";
+    b.textContent = label; b.addEventListener("click", fn);
+    row.appendChild(b);
+    return b;
+  }
+
+  // 인라인 편집기 (새 문항은 q = null)
+  function qEditor(q, onSaved, onCancel){
+    var wrap = document.createElement("div");
+    var ch = q ? q.choices.slice() : ["","","",""];
+    function opt(v, cur){ return '<option value="'+v+'"'+(cur===v?" selected":"")+">"+v+"</option>"; }
+    wrap.innerHTML =
+      '<div class="qedit">' +
+      '<div class="qgrid">' +
+        '<label><span>난이도</span><select class="e-level">' + opt("초급", q&&q.level) + opt("중급", q&&q.level) + opt("고급", q&&q.level) + "</select></label>" +
+        '<label><span>구분</span><select class="e-section">' + opt("멘토편", q&&q.section) + opt("멘티편", q&&q.section) + opt("통합", q&&q.section) + "</select></label>" +
+        '<label><span>UID</span><input type="text" class="e-uid" placeholder="자동" value="'+esc(q?q.uid:"")+'"></label>' +
+      "</div>" +
+      '<label class="full"><span>문항</span><textarea class="e-body" rows="2">'+esc(q?q.body:"")+"</textarea></label>" +
+      [0,1,2,3].map(function(i){
+        return '<label class="opt-line"><span><input type="radio" name="ans-'+(q?q.id:"new")+'" class="e-ans" value="'+i+'"'+
+          ((q?q.answer_index:0)===i?" checked":"")+"> "+(i+1)+'</span><input type="text" class="e-c" value="'+esc(ch[i]||"")+'"></label>';
+      }).join("") +
+      '<label class="full"><span>해설</span><textarea class="e-why" rows="2">'+esc(q?q.explanation:"")+"</textarea></label>" +
+      '<label class="full e-mt-box"><span>멘토 유형 <span style="font-weight:400;color:var(--muted)">멘토편만 적용 · 체크한 유형 시험에만 출제</span></span>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:6px 16px;padding-top:2px">' +
+        ['일반대학생','근로장학생','봉사활동','교사'].map(function(t){
+          var on = q ? ((q.mentor_types||[]).indexOf(t) >= 0) : true;
+          return '<label class="checkline" style="margin:0;font-weight:400"><input type="checkbox" class="e-mt" value="'+t+'"'+(on?" checked":"")+"> "+t+"</label>";
+        }).join("") +
+        "</div></label>" +
+      '<div class="qgrid">' +
+        '<label><span>근거</span><select class="e-guide">' +
+          '<option value=""'+((!q||!q.source_guide)?" selected":"")+">없음</option>" +
+          '<option value="멘토편"'+((q&&q.source_guide==="멘토편")?" selected":"")+">멘토편</option>" +
+          '<option value="멘티편"'+((q&&q.source_guide==="멘티편")?" selected":"")+">멘티편</option></select></label>" +
+        '<label><span>쪽수</span><input type="number" class="e-page" min="1" value="'+((q&&q.source_page)||"")+'"></label>' +
+        '<label><span>출제 대상</span><select class="e-active">' +
+          '<option value="1"'+((!q||q.active)?" selected":"")+">포함</option>" +
+          '<option value="0"'+((q&&!q.active)?" selected":"")+">제외</option></select></label>" +
+      "</div>" +
+      '<div class="rowbtns qbtns"><button class="primary e-save" style="width:auto;padding:7px 16px;font-size:12.5px">' + (state.adminRole === "master" ? "저장" : "수정 요청") + "</button>" +
+      '<button class="ghost e-cancel" style="padding:6px 12px;font-size:11.5px">취소</button>' +
+      '<span class="e-msg"></span></div></div>';
+
+    var msg = wrap.querySelector(".e-msg");
+    function syncMt(){ var b = wrap.querySelector(".e-mt-box"); if (b) b.style.display = (wrap.querySelector(".e-section").value === "멘토편") ? "" : "none"; }
+    wrap.querySelector(".e-section").addEventListener("change", syncMt); syncMt();
+    wrap.querySelector(".e-cancel").addEventListener("click", onCancel);
+    wrap.querySelector(".e-save").addEventListener("click", async function(){
+      var btn = this;
+      var payload = {
+        p_pass: state.adminPass, p_id: q ? q.id : null,
+        p_uid: wrap.querySelector(".e-uid").value.trim(),
+        p_level: wrap.querySelector(".e-level").value,
+        p_section: wrap.querySelector(".e-section").value,
+        p_body: wrap.querySelector(".e-body").value,
+        p_choices: Array.prototype.map.call(wrap.querySelectorAll(".e-c"), function(i){ return i.value.trim(); }),
+        p_answer_index: Number((wrap.querySelector(".e-ans:checked")||{value:0}).value),
+        p_explanation: wrap.querySelector(".e-why").value,
+        p_source_guide: wrap.querySelector(".e-guide").value,
+        p_source_page: wrap.querySelector(".e-page").value ? Number(wrap.querySelector(".e-page").value) : null,
+        p_active: wrap.querySelector(".e-active").value === "1",
+        p_mentor_types: Array.prototype.map.call(wrap.querySelectorAll(".e-mt:checked"), function(i){ return i.value; })
+      };
+      if (payload.p_section === "멘토편" && payload.p_mentor_types.length === 0) {
+        msg.textContent = "멘토 유형을 하나 이상 선택하세요."; return;
+      }
+      var saveLabel = state.adminRole === "master" ? "저장" : "수정 요청";
+      btn.disabled = true; btn.textContent = state.adminRole === "master" ? "저장 중…" : "요청 중…";
+      try {
+        if (state.adminRole !== "master") {
+          await rpc("submit_question_edit", {
+            p_pass: state.adminPass, p_question_id: q.id,
+            p_payload: {
+              level: payload.p_level, section: payload.p_section, mentor_types: payload.p_mentor_types,
+              body: payload.p_body, choices: payload.p_choices, answer_index: payload.p_answer_index,
+              explanation: payload.p_explanation, source_guide: payload.p_source_guide, source_page: payload.p_source_page
+            }
+          });
+          msg.textContent = "수정 요청을 보냈습니다. 마스터 승인 후 반영됩니다.";
+          btn.textContent = "요청됨";
+          setTimeout(onCancel, 1000);
+          return;
+        }
+        var r = await rpc("admin_save_question", payload);
+        if (!q) { loadQuestions(); return; }
+        onSaved({
+          uid: r.uid, level: payload.p_level, section: payload.p_section,
+          body: payload.p_body.trim(), choices: payload.p_choices,
+          answer_index: payload.p_answer_index, explanation: payload.p_explanation.trim(),
+          source_guide: payload.p_source_guide || null, source_page: payload.p_source_page,
+          active: payload.p_active,
+          mentor_types: (payload.p_section === "멘토편" ? payload.p_mentor_types : ["일반대학생","근로장학생","봉사활동","교사"])
+        });
+      } catch(err){
+        msg.textContent = err.message; btn.disabled = false; btn.textContent = saveLabel;
+      }
+    });
+    return wrap;
+  }
+
+  // ── 탭: 수정 요청함 (마스터 전용) ──────────────────────
+  // ── 탭: 공유 링크 관리 (마스터 전용) ────────────────────
+  //   응시자가 결과 화면에서 만든 "이 문제 그대로 공유하기" 링크 목록.
+  //   중지하면 링크는 남지만 더 이상 응시할 수 없다.
+  function paneShares(panel){
+    var card = document.createElement("div"); card.className = "card";
+    card.innerHTML =
+      "<h2>공유 링크</h2>" +
+      "<p class='sub'>응시자가 결과 화면에서 만든 문항 조합 링크입니다. " +
+      "중지하면 그 링크로는 응시할 수 없고, 이미 쌓인 응시 기록은 그대로 남습니다.</p>" +
+      '<label class="field"><span class="lab">시험</span>' +
+      '<select id="shExam" style="padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)">' +
+      '<option value="">전체 시험</option>' +
+      adminExams.map(function(e){
+        return '<option value="' + esc(e.slug) + '">' + esc(e.title) + "</option>";
+      }).join("") + "</select></label>";
+    var wrap = document.createElement("div");
+    card.appendChild(wrap);
+    panel.appendChild(card);
+
+    function mkbtn(cls, label, fn){
+      var b = document.createElement("button");
+      b.className = cls; b.type = "button";
+      b.style.cssText = "width:auto;padding:7px 14px;font-size:12.5px";
+      b.textContent = label;
+      b.addEventListener("click", fn);
+      return b;
+    }
+
+    function load(){
+      wrap.innerHTML = '<p class="empty">불러오는 중…</p>';
+      var slug = $("shExam").value || null;
+      rpc("admin_list_shares", { p_pass: state.adminPass, p_exam_slug: slug }).then(function(list){
+        wrap.innerHTML = "";
+        if (!list.length) {
+          wrap.innerHTML = '<p class="empty">만들어진 공유 링크가 없습니다.</p>';
+          return;
+        }
+        var on = list.filter(function(s){ return s.active; }).length;
+        var sum = document.createElement("p");
+        sum.style.cssText = "font-size:12.5px;color:var(--muted);margin:0 0 12px";
+        sum.textContent = "전체 " + list.length + "개 · 사용 중 " + on + "개 · 중지 " + (list.length - on) + "개";
+        wrap.appendChild(sum);
+
+        list.forEach(function(s){
+          var url = location.origin + location.pathname + "#/s/" + s.token;
+          var d = document.createElement("div");
+          d.style.cssText = "border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px" +
+            (s.active ? "" : ";background:#FAF6F2");
+          d.innerHTML =
+            '<div style="font-size:14.5px;font-weight:700;margin-bottom:3px">' + esc(s.exam_title) +
+            (s.active ? "" : '<span class="chip gray">중지됨</span>') + "</div>" +
+            '<div style="font-size:12.5px;color:var(--muted);margin-bottom:4px">' +
+            esc(s.creator_name || "이름 없음") + " 님이 만듦 · " + s.total + "문항 · 응시 " + s.taken + "건 · " +
+            fmt(s.created_at) + "</div>" +
+            '<div style="font-size:12px;color:var(--muted);word-break:break-all;font-family:var(--mono)">' +
+            esc(url) + "</div>";
+
+          var row = document.createElement("div"); row.className = "rowbtns"; row.style.marginTop = "9px";
+          row.appendChild(mkbtn("ghost", "링크 복사", function(){ copy(url); }));
+          row.appendChild(mkbtn("ghost", s.active ? "사용 중지" : "다시 사용", function(){
+            rpc("admin_toggle_share", { p_pass: state.adminPass, p_id: s.id, p_active: !s.active })
+              .then(load).catch(function(e){ alert(e.message); });
+          }));
+          row.appendChild(mkbtn("danger", "삭제", function(){
+            if (!confirm("이 공유 링크를 삭제할까요? 링크는 즉시 못 쓰게 되고, 되돌릴 수 없습니다.\n(이 링크로 응시한 기록 " + s.taken + "건은 그대로 남습니다.)")) return;
+            rpc("admin_delete_share", { p_pass: state.adminPass, p_id: s.id })
+              .then(load).catch(function(e){ alert(e.message); });
+          }));
+          d.appendChild(row);
+          wrap.appendChild(d);
+        });
+      }).catch(function(e){ wrap.innerHTML = '<p class="empty">' + esc(e.message) + "</p>"; });
+    }
+
+    $("shExam").addEventListener("change", load);
+    load();
+  }
+
+  function paneRequests(panel){
+    var card = document.createElement("div"); card.className="card";
+    card.innerHTML = "<h2>요청함</h2><p class='sub'>서브 담당자가 보낸 시험 삭제·문항 수정 요청입니다. 승인하면 반영됩니다.</p>";
+    var wrap = document.createElement("div"); card.appendChild(wrap); panel.appendChild(card);
+    function mkbtn2(cls, label, fn){ var b=document.createElement("button"); b.className=cls; b.type="button"; b.style.cssText="width:auto;padding:7px 14px;font-size:12.5px"; b.textContent=label; b.addEventListener("click", fn); return b; }
+    function fld(label, cur, prop){
+      var changed = JSON.stringify(cur) !== JSON.stringify(prop);
+      return '<div style="margin:3px 0;font-size:13px;line-height:1.5">' +
+        '<span style="color:var(--muted)">' + label + '</span> ' +
+        (changed ? '<span style="text-decoration:line-through;color:var(--muted)">' + esc(String(cur == null ? "" : cur)) + '</span> → <b>' + esc(String(prop == null ? "" : prop)) + '</b>'
+                 : esc(String(prop == null ? "" : prop))) + "</div>";
+    }
+    function head(t, mt){ var h=document.createElement("h3"); h.textContent=t; h.style.cssText="font-size:14px;margin:"+mt+" 0 8px"; return h; }
+    function load(){
+      wrap.innerHTML = '<p class="empty">불러오는 중…</p>';
+      Promise.all([
+        rpc("admin_list_exam_deletes", { p_pass: state.adminPass }),
+        rpc("admin_list_question_edits", { p_pass: state.adminPass })
+      ]).then(function(res){
+        var dels = res[0], edits = res[1];
+        wrap.innerHTML = "";
+        if (!dels.length && !edits.length) { wrap.innerHTML = '<p class="empty">대기 중인 요청이 없습니다.</p>'; return; }
+        if (dels.length) {
+          wrap.appendChild(head("시험 삭제 요청", "4px"));
+          dels.forEach(function(r){
+            var d = document.createElement("div");
+            d.style.cssText = "border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px";
+            d.innerHTML =
+              '<div style="font-weight:700;margin-bottom:3px">' + esc(r.exam_title) + "</div>" +
+              '<div style="font-size:12.5px;color:var(--muted)">요청자 ' + esc(r.requester || "서브") + " · 제출 " + r.attempt_count + "건 · 삭제 시 응시기록도 함께 사라집니다</div>";
+            var row = document.createElement("div"); row.className="rowbtns"; row.style.marginTop="8px";
+            row.appendChild(mkbtn2("danger", "삭제 승인", function(){
+              if (!confirm("[" + r.exam_title + "] 을(를) 삭제할까요? 되돌릴 수 없습니다.")) return;
+              rpc("admin_resolve_exam_delete", { p_pass: state.adminPass, p_id: r.id, p_approve: true, p_note: null }).then(load).catch(function(e){ alert(e.message); });
+            }));
+            row.appendChild(mkbtn2("ghost", "반려", function(){
+              var note = prompt("반려 사유 (선택)", ""); if (note === null) return;
+              rpc("admin_resolve_exam_delete", { p_pass: state.adminPass, p_id: r.id, p_approve: false, p_note: note }).then(load).catch(function(e){ alert(e.message); });
+            }));
+            d.appendChild(row); wrap.appendChild(d);
+          });
+        }
+        if (edits.length) {
+          wrap.appendChild(head("문항 수정 요청", dels.length ? "14px" : "4px"));
+          edits.forEach(function(r){
+            var q = r.question, p = r.payload;
+            var d = document.createElement("div");
+            d.style.cssText = "border:1px solid var(--line);border-radius:12px;padding:14px 15px;margin-bottom:10px";
+            d.innerHTML =
+              '<div style="font-size:12.5px;color:var(--muted);margin-bottom:6px">' + esc(q.uid) + " · 요청자 " + esc(r.requester || "서브") + "</div>" +
+              fld("문항", q.body, p.body) +
+              fld("정답", (q.choices || [])[q.answer_index], (p.choices || [])[p.answer_index]) +
+              fld("해설", q.explanation, p.explanation) +
+              fld("난이도", q.level, p.level) + fld("구분", q.section, p.section);
+            var row = document.createElement("div"); row.className="rowbtns"; row.style.marginTop="8px";
+            row.appendChild(mkbtn2("primary", "승인 반영", function(){
+              rpc("admin_resolve_question_edit", { p_pass: state.adminPass, p_id: r.id, p_approve: true, p_note: null }).then(load).catch(function(e){ alert(e.message); });
+            }));
+            row.appendChild(mkbtn2("ghost", "반려", function(){
+              var note = prompt("반려 사유 (선택)", ""); if (note === null) return;
+              rpc("admin_resolve_question_edit", { p_pass: state.adminPass, p_id: r.id, p_approve: false, p_note: note }).then(load).catch(function(e){ alert(e.message); });
+            }));
+            d.appendChild(row); wrap.appendChild(d);
+          });
+        }
+      }).catch(function(e){ wrap.innerHTML = '<p class="empty">' + esc(e.message) + "</p>"; });
+    }
+    load();
+  }
+
+  // ── 탭: 담당자 관리 (마스터 전용) ──────────────────────
+  function paneAdmins(panel){
+    var card = document.createElement("div"); card.className="card";
+    card.innerHTML =
+      "<h2>담당자 관리</h2>" +
+      "<p class='sub'>서브 담당자 코드를 만들어 전달하면, 그 코드로 로그인해 본인 시험만 관리합니다. 서브는 시험 생성·수정과 본인 시험의 응시자·점수를 다룰 수 있고, 시험 삭제·점수 초기화·문제은행 수정은 마스터만 가능합니다.</p>" +
+      '<div class="field"><span class="lab">새 서브 담당자</span>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+        '<input type="text" id="naLabel" placeholder="이름/메모" style="flex:1;min-width:120px;padding:11px 12px;border:1px solid var(--line);border-radius:10px">' +
+        '<input type="text" id="naCode" placeholder="접근 코드 (4자 이상)" style="flex:1;min-width:120px;padding:11px 12px;border:1px solid var(--line);border-radius:10px">' +
+        '<button class="primary" id="naAdd" type="button" style="width:auto;flex:none;padding:0 18px">추가</button></div>' +
+      '<p class="notice hide warn" id="naMsg"></p></div>';
+    var listWrap = document.createElement("div"); card.appendChild(listWrap);
+    panel.appendChild(card);
+
+    function mkbtn(cls, label, fn){
+      var b=document.createElement("button"); b.className=cls; b.type="button";
+      b.style.cssText="padding:7px 12px;font-size:12.5px"; b.textContent=label;
+      b.addEventListener("click", fn); return b;
+    }
+    function load(){
+      listWrap.innerHTML = '<p class="empty">불러오는 중…</p>';
+      rpc("admin_list_admins", { p_pass: state.adminPass }).then(function(list){
+        listWrap.innerHTML = "";
+        list.forEach(function(a){
+          var isMaster = a.role === "master";
+          var row = document.createElement("div");
+          row.style.cssText = "border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px" + (a.active ? "" : ";opacity:.55");
+          row.innerHTML =
+            '<div style="font-weight:700">' + esc(a.label || (isMaster ? "마스터" : "서브")) +
+            (isMaster ? '<span class="chip">마스터</span>' : '<span class="chip gray">서브</span>') +
+            (a.active ? "" : '<span class="chip gray">비활성</span>') + "</div>" +
+            '<div style="font-size:12.5px;color:var(--muted);margin:3px 0 8px">코드 ' + esc(a.code) + " · 시험 " + a.exam_count + "개</div>";
+          if (!isMaster) {
+            var btns = document.createElement("div"); btns.className="rowbtns";
+            btns.appendChild(mkbtn("ghost", a.active ? "비활성화" : "활성화", function(){
+              rpc("admin_save_admin", { p_pass: state.adminPass, p_id: a.id, p_code: a.code, p_label: a.label, p_active: !a.active }).then(load).catch(function(e){ alert(e.message); });
+            }));
+            btns.appendChild(mkbtn("ghost", "코드·이름 변경", function(){
+              var nc = prompt("새 접근 코드 (4자 이상)", a.code); if (nc === null) return;
+              var nl = prompt("이름/메모", a.label || ""); if (nl === null) nl = a.label || "";
+              rpc("admin_save_admin", { p_pass: state.adminPass, p_id: a.id, p_code: nc.trim(), p_label: nl, p_active: a.active }).then(load).catch(function(e){ alert(e.message); });
+            }));
+            btns.appendChild(mkbtn("danger", "삭제", function(){
+              if (!confirm("[" + (a.label || "서브") + "] 담당자를 삭제할까요?\n이 담당자가 만든 시험은 마스터 소유로 넘어갑니다.")) return;
+              rpc("admin_delete_admin", { p_pass: state.adminPass, p_id: a.id }).then(load).catch(function(e){ alert(e.message); });
+            }));
+            row.appendChild(btns);
+          }
+          listWrap.appendChild(row);
+        });
+      }).catch(function(e){ listWrap.innerHTML = '<p class="empty">' + esc(e.message) + "</p>"; });
+    }
+    $("naAdd").addEventListener("click", function(){
+      var code = $("naCode").value.trim(), label = $("naLabel").value.trim();
+      var m = $("naMsg"); m.classList.add("hide");
+      rpc("admin_save_admin", { p_pass: state.adminPass, p_id: null, p_code: code, p_label: label, p_active: true }).then(function(){
+        $("naCode").value = ""; $("naLabel").value = ""; load();
+      }).catch(function(e){ m.classList.remove("hide"); m.textContent = e.message; });
+    });
+    load();
+  }
+
+  // ── 탭 4: 설정 ─────────────────────────────────────────
+  function paneSettings(panel){
+    var card = document.createElement("div"); card.className="card";
+    card.innerHTML = "<h2>현황</h2><p class='sub' id='statLine'>불러오는 중…</p>";
+    panel.appendChild(card);
+
+    var sec = document.createElement("div"); sec.className="card";
+    sec.innerHTML = "<h2>관리자 암호 변경</h2><p class='sub'>6자 이상으로 설정하세요.</p>" +
+      '<label class="field"><span class="lab">새 암호</span><input type="password" id="newPass" autocomplete="new-password"></label>' +
+      '<div class="rowbtns"><button class="ghost" id="savePass">변경</button></div>' +
+      '<p class="notice hide" id="setMsg"></p>';
+    panel.appendChild(sec);
+
+    var danger = document.createElement("div"); danger.className="card";
+    danger.innerHTML = "<h2>기록 초기화</h2><p class='sub'>모든 시험의 응시 기록을 지웁니다. 되돌릴 수 없습니다.</p>" +
+      '<div class="rowbtns"><button class="danger" id="resetAll">전체 응시 기록 초기화</button></div>';
+    panel.appendChild(danger);
+
+    $("savePass").addEventListener("click", async function(){
+      var np = $("newPass").value.trim(); if(!np) return;
+      try {
+        await rpc("admin_set_pass", { p_pass: state.adminPass, p_new: np });
+        state.adminPass = np;
+        try { sessionStorage.setItem("ebsq.adminPass", np); } catch(e){}
+        $("newPass").value = "";
+        var m=$("setMsg"); m.className="notice"; m.classList.remove("hide"); m.textContent="암호를 변경했습니다.";
+      } catch(err){ var m2=$("setMsg"); m2.className="notice warn"; m2.classList.remove("hide"); m2.textContent=err.message; }
+    });
+    $("resetAll").addEventListener("click", async function(){
+      if(!confirm("모든 시험의 응시 기록을 지울까요?")) return;
+      try { await rpc("admin_reset", { p_pass: state.adminPass, p_exam_slug: null }); reloadAdmin(); }
+      catch(err){ alert(err.message); }
+    });
+
+    rpc("admin_stats", { p_pass: state.adminPass }).then(function(st){
+      var q = st.questions || {};
+      $("statLine").textContent =
+        "문제 은행 " + st.question_total + "문항 (초급 " + (q["초급"]||0) + " · 중급 " + (q["중급"]||0) +
+        " · 고급 " + (q["고급"]||0) + ") · 시험 " + st.exam_total + "개 · 응시자 " + st.taker_total +
+        "명 · 제출 " + st.attempt_total + "건";
+    }).catch(function(){ $("statLine").textContent = "현황을 불러오지 못했습니다."; });
+  }
+
+  async function reloadAdmin(){
+    try {
+      var exams = await rpc("admin_list_exams", { p_pass: state.adminPass });
+      renderAdmin(exams, null);
+    } catch(e){ alert(e.message); }
+  }
+
+  async function loadAdminResults(slug, title){
+    var box = $("adminResults");
+    if (!box) return;
+    box.innerHTML = '<div class="card"><p class="empty">불러오는 중…</p></div>';
+    try {
+      var d = await rpc("admin_results", { p_pass: state.adminPass, p_exam_slug: slug });
+      var rows = (d.attempts||[]).map(function(a){
+        return "<tr><td>"+esc(a.name)+"</td><td>"+esc(a.exam_title)+"</td><td>" +
+          (a.status==="submitted"?"제출":"미제출") + '</td><td class="num">' +
+          (a.status==="submitted" ? a.score+"/"+a.total : "-") + "</td><td>"+fmt(a.submitted_at)+"</td></tr>";
+      }).join("");
+      var html = '<div class="card"><h2>응시 결과 — ' + esc(title||"전체") + "</h2>" +
+        (rows ? '<div class="scroll"><table><thead><tr><th>이름</th><th>시험</th><th>상태</th><th class="num">점수</th><th>제출</th></tr></thead><tbody>'+rows+"</tbody></table></div>"
+              : '<p class="empty">아직 응시 기록이 없습니다.</p>');
+      var hard = d.hard_questions || [];
+      if (hard.length) {
+        html += '<div class="divider"><span class="t">많이 틀린 문항</span><span class="l"></span></div><div class="scroll"><table>' +
+          "<thead><tr><th>UID</th><th>난이도</th><th>문항</th><th class='num'>정답/출제</th><th>근거</th></tr></thead><tbody>" +
+          hard.map(function(h){
+            return "<tr><td>"+esc(h.uid)+"</td><td>"+esc(h.level)+"</td><td>"+esc(h.body)+
+              '</td><td class="num">'+h.correct+"/"+h.asked+"</td><td>" +
+              (h.source_guide ? esc(h.source_guide+" "+h.source_page+"쪽") : "-") + "</td></tr>";
+          }).join("") + "</tbody></table></div>";
+      }
+      html += "</div>";
+      box.innerHTML = html;
+    } catch(e){
+      box.innerHTML = '<div class="card"><p class="notice warn">'+esc(e.message)+"</p></div>";
+    }
+  }
+
+  function copy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    var done = false;
+    try { done = document.execCommand("copy"); } catch(e){}
+    document.body.removeChild(ta);
+    if (!done && navigator.clipboard) { navigator.clipboard.writeText(text).then(function(){ alert("링크를 복사했습니다."); }); return; }
+    alert(done ? "링크를 복사했습니다." : text);
+  }
+
+  // 시험 링크 공유 모달 (링크 표시 + 자동 클립보드 복사)
+  function shareModal(exam){
+    var url = examUrl(exam.slug);
+    var box = document.createElement("div"); box.className = "card";
+    box.innerHTML =
+      "<h2>시험 공유</h2>" +
+      "<p class='sub'>" + esc(exam.title || "") + " · 아래 링크를 전달하면 이 시험으로 바로 응시할 수 있습니다.</p>" +
+      '<div style="display:flex;gap:8px;align-items:stretch">' +
+        '<input type="text" id="shareUrl" readonly value="' + esc(url) + '" style="flex:1;min-width:0;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font-size:13px">' +
+        '<button class="primary" id="shareCopy" type="button" style="width:auto;flex:none;padding:0 16px">복사</button>' +
+      "</div>" +
+      '<p class="notice hide" id="shareMsg">✓ 링크를 클립보드에 복사했습니다.</p>' +
+      '<div class="rowbtns" style="margin-top:14px"><button class="ghost" id="shareClose" type="button" style="width:auto">닫기</button></div>';
+    openModal(box);
+    var input = $("shareUrl");
+    function doCopy(){
+      try { input.focus(); input.select(); input.setSelectionRange(0, 99999); } catch(e){}
+      var done = false;
+      try { done = document.execCommand("copy"); } catch(e){}
+      if (!done && navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function(){ $("shareMsg").classList.remove("hide"); }, function(){});
+        return;
+      }
+      $("shareMsg").classList.remove("hide");
+    }
+    $("shareCopy").addEventListener("click", doCopy);
+    $("shareClose").addEventListener("click", closeModal);
+    doCopy();
+  }
+
+  // 담당자 화면 진입 시, 같은 탭에서 이미 인증했다면 자동으로 엽니다.
+  (function(){
+    var saved = null;
+    try { saved = sessionStorage.getItem("ebsq.adminPass"); } catch(e){}
+    if (saved) { $("codeInput").value = saved; }
+  })();
+
+  if ($("heroLogo")) $("heroLogo").src = img(A.logoNavy);
+  if ($("mastLogo")) $("mastLogo").src = img(A.logoWhite);
+
+  route();
+  if (!$("scr-admin").classList.contains("hide") && $("codeInput").value) openAdmin();
+})();
+</script>
+</body>
+</html>
